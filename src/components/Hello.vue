@@ -1,7 +1,6 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
     <div v-html="html">
       
     </div>
@@ -31,6 +30,14 @@
       <input type="text" v-model="text">
       <p>{{ text }}</p>
     </div>
+    <div>
+      <p>计算属性</p>
+      {{ myValueWithoutNum }}
+    </div>
+    <br>
+    <hr>
+    <br>
+    <h2>Essential Links</h2>
     <ul>
       <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
       <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
@@ -59,24 +66,24 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      text: '',
-      html: '<ul><li>Emily</li><li>Nancy</li></ul>',
+      text: '胡怒火空港',
+      html: '<ul><li>火影忍者</li><li>死神</li><li>海贼王</li></ul>',
       num: 1,
       status: true,
       link: 'https://www.baidu.com',
       list: [
         {
-          name: 'Emily',
-          age: 26
+          name: '李雷',
+          age: 15
         },
         {
-          name: 'Nancy',
-          age: 28
+          name: '韩梅梅',
+          age: 15
         }
       ],
       obj: {
-        name: 'Emily',
-        age: 26
+        name: '李雷',
+        age: 15
       }
     }
   },
@@ -86,6 +93,11 @@ export default {
     },
     onComaMyEvent(parmfromA){
       console.log('onComaMyEvent ' + parmfromA)
+    }
+  },
+  computed: {
+    myValueWithoutNum: function(){
+      return this.text.replace(/\d/g, '')
     }
   }
 }

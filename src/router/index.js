@@ -5,6 +5,7 @@ import Chat from '@/components/Chat'
 import Login from '@/components/Login'
 import Film from '@/components/Film'
 import Element from '@/components/Element'
+import Von from '@/components/Von'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/element',
       name: 'Element',
       component: Element
+    },
+    {
+      path: '/v-on',
+      name: 'V-on',
+      component: Von
     }
   ]
 })

@@ -106,20 +106,22 @@
             <h3>单选框</h3>
             <el-row>
                 <el-col :span="12">
-                    <el-radio v-model="radio" label="1">Elimy</el-radio>
-                    <el-radio v-model="radio" label="2">Nanacy</el-radio>
+                    <el-radio v-model="radio" label="1">小米</el-radio>
+                    <el-radio v-model="radio" label="2">华为</el-radio>
+                    <el-radio v-model="radio" label="3">魅族</el-radio>
+                    <el-radio v-model="radio" label="4">苹果</el-radio>
                 </el-col>
                 <el-col :span="12">
-                    <el-radio disabled v-model="radio1" label="1">Elimy</el-radio>
-                    <el-radio disabled v-model="radio1" label="2">Nanacy</el-radio>
+                    <el-radio disabled v-model="radio1" label="1">火影忍者</el-radio>
+                    <el-radio disabled v-model="radio1" label="2">死神</el-radio>
                 </el-col>
             </el-row>
             <el-row>
                 <el-col :span="12">
                     <el-radio-group v-model="radio2">
-                        <el-radio :label="3">Nanacy</el-radio>
-                        <el-radio :label="6">Katherine</el-radio>
-                        <el-radio :label="9">Elimy</el-radio>
+                        <el-radio :label="3">火影忍者</el-radio>
+                        <el-radio :label="6">死神</el-radio>
+                        <el-radio :label="9">海贼王</el-radio>
                     </el-radio-group>
                 </el-col>
                 <el-col :span="12">
@@ -149,17 +151,18 @@
             <h3>多选框</h3>
             <el-row :gutter="24">
                 <el-col :span="8">
-                    <el-checkbox v-model="checked">Emily</el-checkbox>
+                    <el-checkbox v-model="checked">苹果</el-checkbox>
                 </el-col>
                 <el-col :span="8">
-                    <el-checkbox v-model="checked1" disabled>Emily</el-checkbox>
-                    <el-checkbox v-model="checked2" disabled>Katherine</el-checkbox>
+                    <el-checkbox v-model="checked1" disabled>苹果</el-checkbox>
+                    <el-checkbox v-model="checked2" disabled>香蕉</el-checkbox>
                 </el-col>
                 <el-col :span="8">
                     <el-checkbox-group v-model="checkList">
-                        <el-checkbox label="Emily"></el-checkbox>
+                        <el-checkbox label="Stefan"></el-checkbox>
                         <el-checkbox label="Katherine"></el-checkbox>
-                        <el-checkbox label="Nancy"></el-checkbox>
+                        <el-checkbox label="Elena"></el-checkbox>
+                        <el-checkbox label="Damon"></el-checkbox>
                         <el-checkbox label="禁用" disabled></el-checkbox>
                         <el-checkbox label="选中且禁用" disabled></el-checkbox>
                     </el-checkbox-group>
@@ -219,7 +222,7 @@
                 checked: true,
                 checked1: false,
                 checked2: true,
-                checkList: ['选中且禁用', 'Emily'],
+                checkList: ['选中且禁用', 'Katherine'],
                 checkAll: true,
                 checkedCities: ['上海', '北京'],
                 cities: cityOptions,
