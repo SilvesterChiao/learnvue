@@ -10,36 +10,36 @@ import Von from '@/components/Von'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'Hello',
-      component: Hello
-    },
-    {
-      path: '/chat',
-      name: 'Chat',
-      component: Chat
-    },
-    {
-      path: '/login',
-      name: 'Login',
-      component: Login
-    },
-    {
-      path: '/film',
-      name: 'Film',
-      component: Film
-    },
-    {
-      path: '/element',
-      name: 'Element',
-      component: Element
-    },
-    {
-      path: '/v-on',
-      name: 'V-on',
-      component: Von
-    }
-  ]
+    routes: [
+        {
+            path: '/',
+            name: 'Hello',
+            component: Hello
+        },
+        {
+            path: '/chat',
+            name: 'Chat',
+            component: Chat
+        },
+        {
+            path: '/login',
+            name: 'Login',
+            component: Login
+        },
+        {
+            path: '/film',
+            name: 'Film',
+            component: Film
+        },
+        {
+            path: '/element',
+            name: 'Element',
+            component: Element
+        },
+        {
+            path: '/v-on',
+            name: 'V-on',
+            component: Von
+        }
+    ]
 })
