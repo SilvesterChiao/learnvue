@@ -2,7 +2,16 @@
     <div>
         <h1>{{ msg }}</h1>
         <div>
-            <h3>Class 与 Style 绑定</h3>
+            <h3>绑定HTML Class</h3>
+            <div>
+                <h3>对象语法</h3>
+                <p>
+                    我们可以传给<code>v-bind:class</code>一个对象，以动态地切换class。
+                </p>
+                <div v-bind:class="classObject">
+                    Vue
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -12,7 +21,11 @@ export default {
     name: 'v-bind',
     data() {
         return {
-            msg: 'v-bind'
+            msg: 'Class 与 Style 绑定',
+            classObject: {
+                active: true,
+                'text-danger': false
+            }
         }
     }
 }
