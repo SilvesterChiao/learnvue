@@ -1,17 +1,21 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
-import Chat from '@/components/Chat'
-import Login from '@/components/Login'
-import Film from '@/components/Film'
-import Element from '@/components/Element'
-import Computed from '@/components/Computed'
-import Vbind from '@/components/Vbind'
-import Vif from '@/components/Vif'
-import Vfor from '@/components/Vfor'
-import Von from '@/components/Von'
-import Vmodel from '@/components/Vmodel'
-import Component from '@/components/Component'
+
+// Vue官网教程
+import Hello from '@/pages/v/Hello'
+import Introduce from '@/pages/v/Introduce'
+import Template from '@/pages/v/Template'
+import Vbind from '@/pages/v/Vbind'
+import Vif from '@/pages/v/Vif'
+import Vfor from '@/pages/v/Vfor'
+import Von from '@/pages/v/Von'
+import Vmodel from '@/pages/v/Vmodel'
+import Component from '@/pages/v/Component'
+import Transition from '@/pages/v/Transition'
+
+// ElementUI
+import Element from '@/pages/element/Element'
+import Film from '@/pages/element/Film'
 
 Vue.use(Router)
 
@@ -23,31 +27,16 @@ export default new Router({
             component: Hello
         },
         {
-            path: '/login',
-            name: 'Login',
-            component: Login
+            path: '/introduce',
+            name: 'Introduce',
+            component: Introduce
         },
         {
-            path: '/chat',
-            name: 'Chat',
-            component: Chat
+            path: '/template',
+            name: 'Template',
+            component: Template
         },
         {
-            path: '/film',
-            name: 'Film',
-            component: Film
-        },
-        {
-            path: '/element',
-            name: 'Element',
-            component: Element
-        },
-        {
-            path: '/computed',
-            name: 'Computed',
-            component: Computed
-        },
-         {
             path: '/v-bind',
             name: 'V-bind',
             component: Vbind
@@ -76,6 +65,21 @@ export default new Router({
             path: '/component',
             name: 'Component',
             component: Component
+        },
+        {
+            path: '/transition',
+            name: 'Transition',
+            component: Transition
+        },
+        {
+            path: '/element',
+            name: 'Element',
+            component: Element
+        },
+        {
+            path: '/film',
+            name: 'Film',
+            component: Film
         }
     ]
 })

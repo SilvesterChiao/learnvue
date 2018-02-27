@@ -1,5 +1,5 @@
 <template>
-    <div class="hello">
+    <div class="introduce">
         <div>
             <h3>Vue.js是什么</h3>
             <p>Vue.js是一套构建用户界面的渐进式框架。与其他重量级框架不同的是，Vue采用自底向上增量开发的设计。Vue的核心库只关注视图层，它不仅易于上手，还便于与第三方或既有项目整合。另一方面，当与单文件组件和Vue生态系统支持的库结合使用时，Vue也完全能够为复杂的单页应用程序提供驱动。</p>
@@ -17,7 +17,7 @@
             <p v-if="seen">现在你看到我了</p>
             <br>
             <ol>
-                <li v-for="todo in todos">
+                <li v-for="(todo, index) in todos" :key="index">
                     {{ todo.text }}
                 </li>
             </ol>
@@ -32,13 +32,6 @@
             <p>{{ msg }}</p>
             <input type="text" v-model="msg">
         </div>
-        <router-link to="/computed">计算属性</router-link>
-        <router-link to="/v-bind">Class与Style绑定</router-link>
-        <router-link to="/v-if">条件渲染</router-link>
-        <router-link to="/v-for">列表渲染</router-link>
-        <router-link to="/v-on">事件处理器</router-link>
-        <router-link to="/v-model">表单控件绑定</router-link>
-        <router-link to="/component">组件</router-link>
         <hr>
         <div v-html="html">
 
@@ -46,12 +39,12 @@
         {{ num + 1 }} {{ status ? 'success' : 'fail' }}
         <div>
             <a v-bind:href="link" v-bind:title="msg">百度</a>
-            <p v-for="(item, index) in list">
+            <p v-for="(item, index) in list" :key="index">
                 {{ item.name }} - {{ item.age }} - {{ index }}
             </p>
         </div>
         <div>
-            <p v-for="(value, key) in obj">
+            <p v-for="(value, key) in obj" :key="key">
                 {{ key + ': ' + value }}
             </p>
         </div>
@@ -75,66 +68,17 @@
             <p>计算属性</p>
             {{ myValueWithoutNum }}
         </div>
-        <div>
-            <p>axios</p>
-            <ul>
-                <li v-for="item in user">
-                    {{ item.name }}
-                </li>
-            </ul>
-        </div>
-        <br>
-        <hr>
-        <br>
-        <h2>Essential Links</h2>
-        <ul>
-            <li>
-                <a href="https://vuejs.org" target="_blank">Core Docs</a>
-            </li>
-            <li>
-                <a href="https://forum.vuejs.org" target="_blank">Forum</a>
-            </li>
-            <li>
-                <a href="https://gitter.im/vuejs/vue" target="_blank">Gitter Chat</a>
-            </li>
-            <li>
-                <a href="https://twitter.com/vuejs" target="_blank">Twitter</a>
-            </li>
-            <br>
-            <li>
-                <a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a>
-            </li>
-        </ul>
-        <h2>Ecosystem</h2>
-        <ul>
-            <li>
-                <a href="http://router.vuejs.org/" target="_blank">vue-router</a>
-            </li>
-            <li>
-                <a href="http://vuex.vuejs.org/" target="_blank">vuex</a>
-            </li>
-            <li>
-                <a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a>
-            </li>
-            <li>
-                <a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a>
-            </li>
-        </ul>
 
-        <router-link to="/Axios">axios</router-link>
-        <router-link to="/Axios">axios</router-link>
-        <router-link to="/Axios">axios</router-link>
     </div>
 </template>
 
 <script>
-import axios from 'axios'
-import banner from './banner'
+import banner from '../../components/banner'
 export default {
     components: {
         banner
     },
-    name: 'hello',
+    name: 'introduce',
     data() {
         return {
             msg: 'Welcome to Your Vue.js App',
@@ -182,25 +126,12 @@ export default {
         },
         onComaMyEvent(parmfromA) {
             console.log('onComaMyEvent ' + parmfromA)
-        },
-        getUser() {
-            var vm = this;
-            axios.get('http://localhost:3000/user')
-                .then(function (response) {
-                    vm.user = response.data;
-                })
-                .catch(function (error) {
-                    console.log(error)
-                })
         }
     },
     computed: {
         myValueWithoutNum: function () {
             return this.text.replace(/\d/g, '')
         }
-    },
-    created() {
-        this.getUser();
     }
 }
 </script>

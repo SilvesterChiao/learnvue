@@ -40,7 +40,7 @@
                     <i class="el-icon-edit"></i>
                     <i class="el-icon-share"></i>
                     <i class="el-icon-delete"></i>
-                    <el-button type="primary" icon="search">搜索</el-button>
+                    <el-button type="primary" icon="el-icon-search">搜索</el-button>
                 </el-col>
             </el-row>
             <el-row :gutter="24">
@@ -68,25 +68,25 @@
             </el-row>
             <el-row :gutter="24">
                 <el-col :span="6">
-                    <el-button type="primary" icon="edit"></el-button>
-                    <el-button type="primary" icon="share"></el-button>
-                    <el-button type="primary" icon="delete"></el-button>
-                    <el-button type="primary" icon="search">搜索</el-button>
+                    <el-button type="primary" icon="el-icon-edit"></el-button>
+                    <el-button type="primary" icon="el-icon-share"></el-button>
+                    <el-button type="primary" icon="el-icon-delete"></el-button>
+                    <el-button type="primary" icon="el-icon-search">搜索</el-button>
                     <el-button type="primary">上传
-                        <i class="el-icon-upload el-icon--right"></i>
+                        <i class="el-icon-upload el-icon-right"></i>
                     </el-button>
                 </el-col>
                 <el-col :span="6">
                     <el-button-group>
-                        <el-button type="primary" icon="arrow-left">上一页</el-button>
+                        <el-button type="primary" icon="el-icon-arrow-left">上一页</el-button>
                         <el-button type="primary">下一页
                             <i class="el-icon-arrow-right el-icon--right"></i>
                         </el-button>
                     </el-button-group>
                     <el-button-group>
-                        <el-button type="primary" icon="edit"></el-button>
-                        <el-button type="primary" icon="share"></el-button>
-                        <el-button type="primary" icon="delete"></el-button>
+                        <el-button type="primary" icon="el-icon-edit"></el-button>
+                        <el-button type="primary" icon="el-icon-share"></el-button>
+                        <el-button type="primary" icon="el-icon-delete"></el-button>
                     </el-button-group>
                 </el-col>
                 <el-col :span="6">
@@ -201,6 +201,41 @@
                     </el-checkbox-group>
                 </el-col>
             </el-row>
+            <h3>输入框</h3>
+            <el-row :gutter="24">
+                <el-col :span="8">
+                    <el-input v-model="input" placeholder="请输入内容" suffix-icon="el-icon-date"></el-input>
+                    <el-input v-model="input" placeholder="请输入内容" prefix-icon="el-icon-search"></el-input>
+
+                    <el-input placeholder="请选择日期" v-model="input">
+                        <i slot="suffix" class="el-input__icon el-icon-date"></i>
+                    </el-input>
+                    <el-input placeholder="请输入内容" v-model="input">
+                        <i slot="prefix" class="el-input__icon el-icon-search"></i>
+                    </el-input>
+                </el-col>
+                <el-col :span="8">
+                    <el-input type="textarea" v-model="input" :rows="3" placeholder="请输入内容"></el-input>
+                </el-col>
+                <el-col :span="8">
+                    <el-input placeholder="请输入内容" v-model="input">
+                        <template slot="prepend">Http://</template>
+                        <template slot="append">.com</template>
+                    </el-input>
+                </el-col>
+            </el-row>
+            <el-row :gutter="24">
+                <el-col :span="24">
+                    <el-input placeholder="请输入内容" v-model="input" class="input-with-select">
+                        <el-select v-model="select" slot="prepend" placeholder="请选择">
+                            <el-option label="餐厅名" value="1"></el-option>
+                            <el-option label="订单号" value="2"></el-option>
+                            <el-option label="电话号" value="3"></el-option>
+                        </el-select>
+                        <el-button slot="append" icon="el-icon-search"></el-button>
+                    </el-input>
+                </el-col>
+            </el-row>
         </div>
         <h4>Data</h4>
         <h4>Notice</h4>
@@ -234,7 +269,9 @@ export default {
             checkedCities1: ['上海', '北京'],
             checkboxGroup1: ['上海'],
             checkboxGroup2: ['北京'],
-            checkboxGroup3: ['深圳']
+            checkboxGroup3: ['深圳'],
+            input: '',
+            select: ''
         }
     },
     methods: {

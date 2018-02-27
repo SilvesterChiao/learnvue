@@ -21,7 +21,7 @@
                 </el-table-column>
             </el-table>
             <ul class="films">
-                <li v-for="film in films">
+                <li v-for="film in films" :key="film.id">
                     <img :src="film.image" alt="生化危机6">
                     <h3 class="animated jello">{{ film.name }}</h3>
                     <span>{{ film.title }}</span>
@@ -65,10 +65,10 @@
 
 <script>
 
-import img1 from '../assets/movie_1.jpg'
-import img2 from '../assets/movie_2.jpg'
-import img3 from '../assets/movie_3.jpg'
-import img4 from '../assets/movie_4.jpg'
+import img1 from '../../assets/images/movie_1.jpg'
+import img2 from '../../assets/images/movie_2.jpg'
+import img3 from '../../assets/images/movie_3.jpg'
+import img4 from '../../assets/images/movie_4.jpg'
 
 export default {
     name: 'hello',
