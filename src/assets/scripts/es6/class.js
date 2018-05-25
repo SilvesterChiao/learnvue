@@ -1,20 +1,20 @@
 class Animal {
-    constructor(){
-        this.type = 'animal';
+    constructor() {
+        this.type = 'animal'
     }
 
-    say(str){
+    say(str) {
         // console.log('${this.type}say:${str}');
         setTimeout(() => {
-            console.log(this.type + ' says:' + str);
-        }, 1000);
+            console.log(this.type + ' says:' + str)
+        }, 1000)
     }
 }
 
 export default class extends Animal {
-    constructor(){
-        super();
-        this.type = 'dog';
+    constructor() {
+        super()
+        this.type = 'dog'
     }
 }
 
@@ -31,35 +31,35 @@ export default class extends Animal {
 // };
 
 // es6写法
-class Point{
-	constructor(x, y){
-		this.x = x;
-		this.y = y;
+class Point {
+    constructor(x, y) {
+        this.x = x
+        this.y = y
     }
 
-    toString(){
-        return '(' + this.x + ', ' + this.y + ')';
+    toString() {
+        return '(' + this.x + ', ' + this.y + ')'
     }
 }
 
-var p = new Point(1, 2);
-console.log(p.toString());
+var p = new Point(1, 2)
+console.log(p.toString())
 
 // 2 Class的继承
 
-class ColorPoint extends Point{
-    constructor(x, y, color){
-        super(x, y);
-        this.color = color;
+class ColorPoint extends Point {
+    constructor(x, y, color) {
+        super(x, y)
+        this.color = color
     }
 
-    toString(){
-        return this.color + ' ' + super.toString();
+    toString() {
+        return this.color + ' ' + super.toString()
     }
 }
 
-var p2 = new ColorPoint(1, 2, 'red');
-console.log(p2.toString());
+var p2 = new ColorPoint(1, 2, 'red')
+console.log(p2.toString())
 // 3 原生构造函数的继承
 // 4 Class的getter和setter
 // 5 Class的Generator方法
