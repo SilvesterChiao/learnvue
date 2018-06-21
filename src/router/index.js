@@ -20,6 +20,7 @@ import Film from '@/pages/element/Film'
 Vue.use(Router)
 
 export default new Router({
+    mode: 'history',
     routes: [
         {
             path: '/',
