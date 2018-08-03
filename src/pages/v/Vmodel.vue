@@ -17,7 +17,7 @@
             <div>
                 <span>已选座位({{ selectedChairs.length }}个共{{ selectedChairs.length * price }}元)：</span>
                 <div>
-                    <span v-for="selectedChair in selectedChairs">
+                    <span v-for="(selectedChair, index) in selectedChairs" :key="index">
                         {{selectedChair[0]}}排{{ selectedChair[1] }}号
                     </span>
                 </div>
@@ -30,7 +30,7 @@
 <script>
 export default {
     name: 'v-model',
-    data() {
+    data () {
         return {
             msg: 'v-model',
             price: 20,
@@ -44,47 +44,47 @@ export default {
         }
     },
     methods: {
-        selectChair(chair){
-            if(this.checkDisabledChairs(chair)){
-                alert('此座位已被预定，请选择其他作为');
-                return;
+        selectChair (chair) {
+            if (this.checkDisabledChairs(chair)) {
+                alert('此座位已被预定，请选择其他作为')
+                return
             };
-            var refIndex = chair[0] + '-' + chair[1];
-            var dom = this.$refs[refIndex][0];
-            var selectedIndex = 0;
-            var selected = this.selectedChairs.some(function(item, index){
-                if(item[0] == chair[0] && item[1] == chair[1]){
-                    selectedIndex = index;
+            var refIndex = chair[0] + '-' + chair[1]
+            var dom = this.$refs[refIndex][0]
+            var selectedIndex = 0
+            var selected = this.selectedChairs.some(function (item, index) {
+                if (item[0] === chair[0] && item[1] === chair[1]) {
+                    selectedIndex = index
                 };
-                return item[0] == chair[0] && item[1] == chair[1];
-            });
-            if(selected){
-                this.selectedChairs.splice(selectedIndex, 1);
-                dom.style.backgroundColor = '';
-            }else{
-                this.selectedChairs.push(chair);
-                dom.style.backgroundColor = 'green';
+                return item[0] === chair[0] && item[1] === chair[1]
+            })
+            if (selected) {
+                this.selectedChairs.splice(selectedIndex, 1)
+                dom.style.backgroundColor = ''
+            } else {
+                this.selectedChairs.push(chair)
+                dom.style.backgroundColor = 'green'
             }
         },
-        redDisabledChairs(){
-            this.disabledChairs.forEach((item, index, array)=>{
-                var disabledChairsIndex = item[0] + '-' + item[1];
-                this.$refs[disabledChairsIndex][0].style.cursor = 'no-drop';
-                this.$refs[disabledChairsIndex][0].style.backgroundColor = 'red';
-            });
+        redDisabledChairs () {
+            this.disabledChairs.forEach((item, index, array) => {
+                var disabledChairsIndex = item[0] + '-' + item[1]
+                this.$refs[disabledChairsIndex][0].style.cursor = 'no-drop'
+                this.$refs[disabledChairsIndex][0].style.backgroundColor = 'red'
+            })
         },
-        checkDisabledChairs(chair){
-             return this.disabledChairs.some((item, index, array)=>{
-                return item[0] === chair[0] && item[1] === chair[1];
-            });
+        checkDisabledChairs (chair) {
+            return this.disabledChairs.some((item, index, array) => {
+                return item[0] === chair[0] && item[1] === chair[1]
+            })
         },
-        submitChairs(){
-            console.log(this.selectedChairs);
+        submitChairs () {
+            console.log(this.selectedChairs)
         }
     },
-    mounted(){
-        this.$nextTick(()=>{
-            this.redDisabledChairs();
+    mounted () {
+        this.$nextTick(() => {
+            this.redDisabledChairs()
         })
     }
 }
@@ -112,13 +112,12 @@ a {
 }
 
 .cinema {
-
 }
 
 .cinema-box {
     display: flex;
     justify-content: center;
-    flex-flow:
+    /* flex-flow: ; */
 }
 
 .cinema-chair {

@@ -95,7 +95,7 @@ export default {
         banner
     },
     name: 'hello',
-    data() {
+    data () {
         return {
             msg: 'Welcome to Your Vue.js App',
             message: '页面加载于 ' + new Date(),
@@ -134,20 +134,20 @@ export default {
         }
     },
     methods: {
-        reverseMessage(){
-            this.msg = this.msg.split('').reverse().join('');
+        reverseMessage () {
+            this.msg = this.msg.split('').reverse().join('')
         },
         toggle: function () {
-            this.status = !this.status;
+            this.status = !this.status
         },
-        onComaMyEvent(parmfromA) {
+        onComaMyEvent (parmfromA) {
             console.log('onComaMyEvent ' + parmfromA)
         },
-        getUser() {
-            var vm = this;
+        getUser () {
+            var vm = this
             axios.get('http://localhost:3000/user')
                 .then(function (response) {
-                    vm.user = response.data;
+                    vm.user = response.data
                 })
                 .catch(function (error) {
                     console.log(error)
@@ -159,16 +159,16 @@ export default {
             return this.text.replace(/\d/g, '')
         }
     },
-    created() {
-        var black = new Dog();
-        black.say('你好我叫小黑');
+    created () {
+        var black = new Dog()
+        black.say('你好我叫小黑')
         // this.getUser();
 
-        var animal = new Animal('小白', 'white');
-        animal.sayName();
-        var s = new Set();
-        [2,3,5,4,2,2].map(x => s.add(x));
-        for(var i of s){
+        var animal = new Animal('小白', 'white')
+        animal.sayName()
+        var s = new Set()
+            ;[2, 3, 5, 4, 2, 2].map(x => s.add(x))
+        for (var i of s) {
             console.log(i)
         }
     }
@@ -182,7 +182,8 @@ h2 {
     font-weight: normal;
 }
 
-ul, ol {
+ul,
+ol {
     list-style-type: none;
     padding: 0;
 }

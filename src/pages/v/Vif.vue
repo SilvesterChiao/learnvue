@@ -10,7 +10,7 @@
 <script>
 export default {
     name: 'v-if',
-    data() {
+    data () {
         return {
             msg: 'v-if'
         }

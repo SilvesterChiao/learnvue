@@ -12,14 +12,14 @@
 <script>
 export default {
     name: 'banner',
-    data() {
+    data () {
         return {
             msg: 'banner'
         }
     },
     props: ['number'],
     methods: {
-        emitMyEvent() {
+        emitMyEvent () {
             this.$emit('my-event', this.msg)
         }
     }

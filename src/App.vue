@@ -97,13 +97,13 @@
 <script>
 export default {
     name: 'app',
-    data(){
+    data () {
         return {
             logined: false
         }
     },
     methods: {
-        checkLogin(){
+        checkLogin () {
 
         }
     }
@@ -149,7 +149,8 @@ body {
     list-style: none;
 }
 
-.header ul li {}
+.header ul li {
+}
 .header ul li a {
     margin-left: 15px;
     line-height: 50px;
@@ -170,7 +171,8 @@ body {
     list-style: none;
 }
 
-.sidebar ul li {}
+.sidebar ul li {
+}
 
 .sidebar ul li a {
     display: inline-block;

@@ -46,7 +46,7 @@
 <script>
 export default {
     name: 'v-bind',
-    data() {
+    data () {
         return {
             msg: 'Class 与 Style 绑定',
             isActive: true,
@@ -73,7 +73,7 @@ export default {
         }
     },
     computed: {
-        classObjectComputed(){
+        classObjectComputed () {
             return {
                 active: this.isActive && !this.error,
                 'text-danger': this.error && this.error.type === 'fatal'

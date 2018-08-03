@@ -248,7 +248,7 @@
 let cityOptions = ['上海', '北京', '广州', '深圳']
 export default {
     name: 'element',
-    data() {
+    data () {
         let msg = 'Element'
         return {
             msg: msg,
@@ -275,14 +275,14 @@ export default {
         }
     },
     methods: {
-        handleCheckAllChange(event) {
-            this.checkedCities = event.target.checked ? cityOptions : [];
-            this.isIndeterminate = false;
+        handleCheckAllChange (event) {
+            this.checkedCities = event.target.checked ? cityOptions : []
+            this.isIndeterminate = false
         },
-        handleCheckedCitiesChange(value) {
-            let checkedCount = value.length;
-            this.checkAll = checkedCount === this.cities.length;
-            this.isIndeterminate = checkedCount > 0 && checkedCount < this.cities.length;
+        handleCheckedCitiesChange (value) {
+            let checkedCount = value.length
+            this.checkAll = checkedCount === this.cities.length
+            this.isIndeterminate = checkedCount > 0 && checkedCount < this.cities.length
         }
     }
 }
@@ -290,5 +290,4 @@ export default {
 </script>
 
 <style>
-
 </style>

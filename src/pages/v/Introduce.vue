@@ -28,7 +28,8 @@
             <button v-on:click="reverseMessage">逆转消息</button>
         </div>
         <div>
-            <p>Vue还提供了<code>v-model</code>指令，它能轻松实现表单输入和应用状态之间的双向绑定。</p>
+            <p>Vue还提供了
+                <code>v-model</code>指令，它能轻松实现表单输入和应用状态之间的双向绑定。</p>
             <p>{{ msg }}</p>
             <input type="text" v-model="msg">
         </div>
@@ -79,7 +80,7 @@ export default {
         banner
     },
     name: 'introduce',
-    data() {
+    data () {
         return {
             msg: 'Welcome to Your Vue.js App',
             message: '页面加载于 ' + new Date(),
@@ -118,13 +119,13 @@ export default {
         }
     },
     methods: {
-        reverseMessage(){
-            this.msg = this.msg.split('').reverse().join('');
+        reverseMessage () {
+            this.msg = this.msg.split('').reverse().join('')
         },
         toggle: function () {
-            this.status = !this.status;
+            this.status = !this.status
         },
-        onComaMyEvent(parmfromA) {
+        onComaMyEvent (parmfromA) {
             console.log('onComaMyEvent ' + parmfromA)
         }
     },
@@ -143,7 +144,8 @@ h2 {
     font-weight: normal;
 }
 
-ul, ol {
+ul,
+ol {
     list-style-type: none;
     padding: 0;
 }

@@ -7,11 +7,9 @@
                 <h5>文本</h5>
                 <input type="text" v-model="msg">
                 <p>
-                    这里是通过 {{  }} 绑定的，会随着data变化
-                    {{ msg }}</p>
+                    这里是通过 {{ }} 绑定的，会随着data变化 {{ msg }}</p>
                 <p v-once>
-                    这里是通过 v-once 绑定的，不会变的
-                    {{ msg }}
+                    这里是通过 v-once 绑定的，不会变的 {{ msg }}
                 </p>
                 <h5>原始HTML</h5>
                 <p v-html="rawHtml"></p>
@@ -27,10 +25,7 @@
             <h1>计算属性</h1>
             <p>
                 <input type="text" v-model="question">
-                <br>
-                question: {{ question }} <br>
-                new question: {{ newQuestion }} <br>
-                answer: {{ answer }}
+                <br> question: {{ question }} <br> new question: {{ newQuestion }} <br> answer: {{ answer }}
             </p>
         </div>
         <div class="if">
@@ -46,7 +41,7 @@
 <script>
 export default {
     name: 'v-template',
-    data() {
+    data () {
         return {
             msg: '模板语法',
             rawHtml: '<span style="color: red;">html</span>',
@@ -56,22 +51,22 @@ export default {
         }
     },
     methods: {
-        getAnswer(width = 10){
-            this.answer = '呵呵' + width;
+        getAnswer (width = 10) {
+            this.answer = '呵呵' + width
             this.answer = `呵呵${width}`
         },
-        toggleSeen(){
-            this.seen = !this.seen;
+        toggleSeen () {
+            this.seen = !this.seen
         }
     },
     computed: {
-        newQuestion(){
-            return this.question.split('').reverse().join('');
+        newQuestion () {
+            return this.question.split('').reverse().join('')
         }
     },
     watch: {
-        question: function(newValue, oldValue){
-            this.getAnswer(20);
+        question: function (newValue, oldValue) {
+            this.getAnswer(20)
         }
     }
 }

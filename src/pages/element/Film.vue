@@ -72,7 +72,7 @@ import img4 from '../../assets/images/movie_4.jpg'
 
 export default {
     name: 'hello',
-    data() {
+    data () {
         let msg = 'Welcome to Your Vue.js App'
         return {
             msg: msg,
@@ -192,21 +192,21 @@ export default {
         }
     },
     methods: {
-        deleteFilm(film) {
+        deleteFilm (film) {
             this.films.splice(this.films.indexOf(film), 1)
             this.$message({
                 message: '删除成功',
                 type: 'success'
             })
         },
-        deleteRow(index, rows) {
+        deleteRow (index, rows) {
             rows.splice(index, 1)
             this.$message({
                 message: '删除成功',
                 type: 'success'
             })
         },
-        open2(index, rows) {
+        open2 (index, rows) {
             this.$confirm('此操作将永久删除该文件，是否继续？', '提示', {
                 confirmButtonText: '确定',
                 cancelButtonText: '取消',
@@ -221,14 +221,14 @@ export default {
                 this.$message({
                     type: 'info',
                     message: '已取消删除'
-                });
-            });
+                })
+            })
         },
         addFilm: function () {
             console.log('增加条目')
         },
         onSubmit: function () {
-            console.log('编辑条目');
+            console.log('编辑条目')
         }
     }
 }

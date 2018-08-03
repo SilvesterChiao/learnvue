@@ -78,7 +78,7 @@
 <script>
 export default {
     name: 'v-on',
-    data() {
+    data () {
         return {
             msg: 'v-on',
             counter: 0,
@@ -86,20 +86,20 @@ export default {
         }
     },
     methods: {
-        greet(event) {
+        greet (event) {
             // 'this'在方法里指当前Vue实例
             alert('Hello ' + this.name + '!');
             // 'event'是原生DOM事件
             alert(event.target.tagName)
         },
-        say(message) {
+        say (message) {
             alert(message)
         },
-        warn(message, event) {
+        warn (message, event) {
             if (event) event.preventDefault()
             alert(message)
         },
-        submit(event) {
+        submit (event) {
             console.log(event.key)
         }
     }

@@ -15,30 +15,30 @@
 var Child = {
     props: ['message'],
     template: '<div>这里是子组件{{ message }}<button v-on:click="incrementTotal">{{ counter }}</button></div>',
-    data: function(){
+    data: function () {
         return {
             counter: 0
         }
     },
     methods: {
-        incrementTotal: function(){
-            this.counter += 1;
-            this.$emit('increment');
+        incrementTotal: function () {
+            this.counter += 1
+            this.$emit('increment')
         }
     }
-};
+}
 
 export default {
     name: 'component',
-    data() {
+    data () {
         return {
             msg: 'component',
             total: 0
         }
     },
     methods: {
-        incrementTotal: function(){
-            this.total += 1;
+        incrementTotal: function () {
+            this.total += 1
         }
     },
     components: {

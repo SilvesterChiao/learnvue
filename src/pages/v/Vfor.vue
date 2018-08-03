@@ -6,11 +6,11 @@
             <div>
                 <ul>
                     <li>数组</li>
-                    <li v-for="(item, index) in items">
+                    <li v-for="(item, index) in items" :key="index">
                         {{ parentMessage }}-{{ index }}-{{ item.message }}
                     </li>
                     <li>对象</li>
-                    <li v-for="(value, key, index) in object">
+                    <li v-for="(value, key, index) in object" :key="index">
                         {{ index }}-{{ key }}-{{ value }}
                     </li>
                 </ul>
@@ -22,7 +22,7 @@
 <script>
 export default {
     name: 'v-for',
-    data() {
+    data () {
         return {
             msg: 'v-for',
             parentMessage: 'parent',
