@@ -49,6 +49,9 @@
                         <router-link to="/component">组件</router-link>
                     </li>
                     <li>
+                        <router-link to="/transitions">过渡效果</router-link>
+                    </li>
+                    <li>
                         <router-link to="/element">element-ui</router-link>
                     </li>
                     <li>

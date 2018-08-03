@@ -5,16 +5,17 @@ import Router from 'vue-router'
 import Hello from '@/pages/v/Hello'
 import Introduce from '@/pages/v/Introduce'
 import Template from '@/pages/v/Template'
+import Computed from '@/pages/v/Computed'
 import Vbind from '@/pages/v/Vbind'
 import Vif from '@/pages/v/Vif'
 import Vfor from '@/pages/v/Vfor'
 import Von from '@/pages/v/Von'
 import Vmodel from '@/pages/v/Vmodel'
 import Component from '@/pages/v/Component'
-import Transition from '@/pages/v/Transition'
+import Transitions from '@/pages/v/Transitions'
 
 // ElementUI
-import Element from '@/pages/element/Element'
+import Elementui from '@/pages/element/Element'
 import Film from '@/pages/element/Film'
 
 Vue.use(Router)
@@ -36,6 +37,11 @@ export default new Router({
             path: '/template',
             name: 'Template',
             component: Template
+        },
+        {
+            path: '/computed',
+            name: 'Computed',
+            component: Computed
         },
         {
             path: '/v-bind',
@@ -68,14 +74,14 @@ export default new Router({
             component: Component
         },
         {
-            path: '/transition',
-            name: 'Transition',
-            component: Transition
+            path: '/transitions',
+            name: 'Transitions',
+            component: Transitions
         },
         {
             path: '/element',
             name: 'Element',
-            component: Element
+            component: Elementui
         },
         {
             path: '/film',

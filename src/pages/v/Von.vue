@@ -88,7 +88,7 @@ export default {
     methods: {
         greet (event) {
             // 'this'在方法里指当前Vue实例
-            alert('Hello ' + this.name + '!');
+            alert('Hello ' + this.name + '!')
             // 'event'是原生DOM事件
             alert(event.target.tagName)
         },
