@@ -49,6 +49,18 @@
                         <router-link to="/component">组件</router-link>
                     </li>
                     <li>
+                        <router-link to="/prop">属性</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/events">自定义事件</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/slot">插槽</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/dynamic">动态组件</router-link>
+                    </li>
+                    <li>
                         <router-link to="/transitions">过渡效果</router-link>
                     </li>
                     <li>

@@ -11,7 +11,11 @@ import Vif from '@/pages/v/Vif'
 import Vfor from '@/pages/v/Vfor'
 import Von from '@/pages/v/Von'
 import Vmodel from '@/pages/v/Vmodel'
-import Component from '@/pages/v/Component'
+import Components from '@/pages/v/Components'
+import Prop from '@/pages/v/Prop'
+import Events from '@/pages/v/Events'
+import Slot from '@/pages/v/Slot'
+import Dynamic from '@/pages/v/Dynamic'
 import Transitions from '@/pages/v/Transitions'
 
 // ElementUI
@@ -69,14 +73,34 @@ export default new Router({
             component: Vmodel
         },
         {
-            path: '/component',
-            name: 'Component',
-            component: Component
+            path: '/components',
+            name: 'Components',
+            component: Components
         },
         {
             path: '/transitions',
             name: 'Transitions',
             component: Transitions
+        },
+        {
+            path: '/prop',
+            name: 'Prop',
+            component: Prop
+        },
+        {
+            path: '/events',
+            name: 'Events',
+            component: Events
+        },
+        {
+            path: '/slot',
+            name: 'Slot',
+            component: Slot
+        },
+        {
+            path: '/dynamic',
+            name: 'Dynamic',
+            component: Dynamic
         },
         {
             path: '/element',
