@@ -1,9 +1,9 @@
 class Animal {
-    constructor() {
+    constructor () {
         this.type = 'animal'
     }
 
-    say(str) {
+    say (str) {
         // console.log('${this.type}say:${str}');
         setTimeout(() => {
             console.log(this.type + ' says:' + str)
@@ -12,7 +12,7 @@ class Animal {
 }
 
 export default class extends Animal {
-    constructor() {
+    constructor () {
         super()
         this.type = 'dog'
     }
@@ -32,12 +32,12 @@ export default class extends Animal {
 
 // es6写法
 class Point {
-    constructor(x, y) {
+    constructor (x, y) {
         this.x = x
         this.y = y
     }
 
-    toString() {
+    toString () {
         return '(' + this.x + ', ' + this.y + ')'
     }
 }
@@ -48,12 +48,12 @@ console.log(p.toString())
 // 2 Class的继承
 
 class ColorPoint extends Point {
-    constructor(x, y, color) {
+    constructor (x, y, color) {
         super(x, y)
         this.color = color
     }
 
-    toString() {
+    toString () {
         return this.color + ' ' + super.toString()
     }
 }

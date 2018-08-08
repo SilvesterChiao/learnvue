@@ -89,6 +89,7 @@ import axios from 'axios'
 import banner from '../../components/banner'
 import Dog from '../../assets/scripts/es6/class'
 import Animal from '../../assets/scripts/es6/modules'
+import { person, volume } from '../../assets/scripts/es6/modules/index'
 
 export default {
     components: {
@@ -171,6 +172,9 @@ export default {
         for (var i of s) {
             console.log(i)
         }
+
+        console.log('person', person)
+        console.log('volume', volume)
     }
 }
 </script>
