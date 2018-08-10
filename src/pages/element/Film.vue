@@ -10,7 +10,7 @@
                 <el-table-column prop="type" label="影片类型" width="180"></el-table-column>
                 <el-table-column prop="hot" label="热门" width="80"></el-table-column>
                 <el-table-column label="操作">
-                    <template scope="scope">
+                    <template slot-scope="scope">
                         <el-button @click.native.prevent="open2(scope.$index, films)" type="text" size="small">
                             移除
                         </el-button>
