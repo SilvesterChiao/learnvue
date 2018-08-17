@@ -57,6 +57,9 @@ export default {
         },
         toggleSeen () {
             this.seen = !this.seen
+            this.$nextTick(() => {
+                console.log('dom更新了')
+            })
         }
     },
     computed: {

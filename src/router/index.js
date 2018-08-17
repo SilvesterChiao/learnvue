@@ -18,15 +18,21 @@ import Slot from '@/pages/v/Slot'
 import Dynamic from '@/pages/v/Dynamic'
 import Transitions from '@/pages/v/Transitions'
 
+// vue-router教程
+import Guide from '@/pages/r/Guide'
+import GuildDefault from '@/pages/r/GuildDefault'
+import GuildLeft from '@/pages/r/GuildLeft'
+
 // ElementUI
 import Elementui from '@/pages/element/Element'
 import Film from '@/pages/element/Film'
 
 Vue.use(Router)
 
-export default new Router({
+let router = new Router({
     mode: 'history',
     routes: [
+        // vue
         {
             path: '/',
             name: 'Hello',
@@ -102,6 +108,27 @@ export default new Router({
             name: 'Dynamic',
             component: Dynamic
         },
+        // vue-router
+        {
+            path: '/guide',
+            name: 'Guide',
+            component: Guide,
+            children: [
+                {
+                    path: '',
+                    name: 'GuideChildren',
+                    components: {
+                        default: GuildDefault,
+                        left: GuildLeft
+                    },
+                    beforeEnter (to, from, next) {
+                        console.log('beforeEnter', to)
+                        next()
+                    }
+                }
+            ]
+        },
+        // elementUI
         {
             path: '/element',
             name: 'Element',
@@ -114,3 +141,20 @@ export default new Router({
         }
     ]
 })
+
+// 全局前置守卫
+router.beforeEach((to, from, next) => {
+    console.log('beforeEach', to)
+    next()
+})
+
+router.beforeResolve((to, from, next) => {
+    console.log('beforeResolve', to)
+    next()
+})
+
+router.afterEach((to, from) => {
+    console.log('afterEach', to)
+})
+
+export default router

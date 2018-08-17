@@ -17,89 +17,106 @@
         </div>
         <div class="main">
             <div class="sidebar">
-                <ul>
-                    <li>
-                        <router-link to="/">首页</router-link>
-                    </li>
-                    <li>
-                        <router-link to="/introduce">介绍</router-link>
-                    </li>
-                    <li>
-                        <router-link to="/template">模板语法</router-link>
-                    </li>
-                    <li>
-                        <router-link to="/computed">计算属性</router-link>
-                    </li>
-                    <li>
-                        <router-link to="/v-bind">Class与Style绑定</router-link>
-                    </li>
-                    <li>
-                        <router-link to="/v-if">条件渲染</router-link>
-                    </li>
-                    <li>
-                        <router-link to="/v-for">列表渲染</router-link>
-                    </li>
-                    <li>
-                        <router-link to="/v-on">事件处理器</router-link>
-                    </li>
-                    <li>
-                        <router-link to="/v-model">表单控件绑定</router-link>
-                    </li>
-                    <li>
-                        <router-link to="/component">组件</router-link>
-                    </li>
-                    <li>
-                        <router-link to="/prop">属性</router-link>
-                    </li>
-                    <li>
-                        <router-link to="/events">自定义事件</router-link>
-                    </li>
-                    <li>
-                        <router-link to="/slot">插槽</router-link>
-                    </li>
-                    <li>
-                        <router-link to="/dynamic">动态组件</router-link>
-                    </li>
-                    <li>
-                        <router-link to="/transitions">过渡效果</router-link>
-                    </li>
-                    <li>
-                        <router-link to="/element">element-ui</router-link>
-                    </li>
-                    <li>
-                        <router-link to="/film">电影</router-link>
-                    </li>
-                </ul>
-                <!-- <el-menu mode="vertical" default-active="1" class="el-menu-vertical-demo" router>
-                    <el-menu-item-group title="分组一">
-                        <el-menu-item index="/">
-                            <i class="el-icon-message"></i>
-                            首页
-                        </el-menu-item>
-                        <el-menu-item index="/login">
-                            <i class="el-icon-message"></i>
-                            登录
-                        </el-menu-item>
-                        <el-menu-item index="/chat">
-                            <i class="el-icon-message"></i>
-                            聊天
-                        </el-menu-item>
-                    </el-menu-item-group>
-                    <el-menu-item-group title="分组二">
-                        <el-menu-item index="/hello">
-                            <i class="el-icon-message"></i>
-                            Hello
-                        </el-menu-item>
-                        <el-menu-item index="/film">
-                            <i class="el-icon-message"></i>
-                            电影
-                        </el-menu-item>
-                        <el-menu-item index="/element">
-                            <i class="el-icon-message"></i>
-                            element-ui
-                        </el-menu-item>
-                    </el-menu-item-group>
-                </el-menu> -->
+                <el-menu mode="vertical" default-active="1" class="el-menu-vertical-demo" router>
+                    <el-submenu index="1" :show-timeout="500" :hide-timeout="800">
+                        <template slot="title">
+                            <i class="el-icon-location"></i>
+                            <span>Vue</span>
+                        </template>
+                        <el-menu-item-group title="基础">
+                            <el-menu-item index="/">
+                                <i class="el-icon-message"></i>
+                                首页
+                            </el-menu-item>
+                            <el-menu-item index="/introduce">
+                                <i class="el-icon-message"></i>
+                                介绍
+                            </el-menu-item>
+                            <el-menu-item index="/template">
+                                <i class="el-icon-message"></i>
+                                模板语法
+                            </el-menu-item>
+                            <el-menu-item index="/computed">
+                                <i class="el-icon-message"></i>
+                                计算属性
+                            </el-menu-item>
+                            <el-menu-item index="/v-bind">
+                                <i class="el-icon-message"></i>
+                                Class与Style绑定
+                            </el-menu-item>
+                            <el-menu-item index="/v-if">
+                                <i class="el-icon-message"></i>
+                                条件渲染
+                            </el-menu-item>
+                            <el-menu-item index="/v-for">
+                                <i class="el-icon-message"></i>
+                                列表渲染
+                            </el-menu-item>
+                            <el-menu-item index="/v-on">
+                                <i class="el-icon-message"></i>
+                                事件处理器
+                            </el-menu-item>
+                            <el-menu-item index="/v-model">
+                                <i class="el-icon-message"></i>
+                                表单
+                            </el-menu-item>
+                        </el-menu-item-group>
+                        <el-menu-item-group title="组件">
+                            <el-menu-item index="/component">
+                                <i class="el-icon-message"></i>
+                                组件
+                            </el-menu-item>
+                            <el-menu-item index="/prop">
+                                <i class="el-icon-message"></i>
+                                属性
+                            </el-menu-item>
+                            <el-menu-item index="/events">
+                                <i class="el-icon-message"></i>
+                                自定义事件
+                            </el-menu-item>
+                            <el-menu-item index="/slot">
+                                <i class="el-icon-message"></i>
+                                插槽
+                            </el-menu-item>
+                            <el-menu-item index="/dynamic">
+                                <i class="el-icon-message"></i>
+                                动态组件
+                            </el-menu-item>
+                            <el-menu-item index="/transitions">
+                                <i class="el-icon-message"></i>
+                                过渡效果
+                            </el-menu-item>
+                        </el-menu-item-group>
+                    </el-submenu>
+                    <el-submenu index="2" :show-timeout="500" :hide-timeout="800">
+                        <template slot="title">
+                            <i class="el-icon-menu"></i>
+                            <span>vue-router</span>
+                        </template>
+                        <el-menu-item-group title="基础">
+                            <el-menu-item index="/guide">
+                                <i class="el-icon-message"></i>
+                                介绍
+                            </el-menu-item>
+                        </el-menu-item-group>
+                    </el-submenu>
+                    <el-submenu index="3" :show-timeout="500" :hide-timeout="800">
+                        <template slot="title">
+                            <i class="el-icon-setting"></i>
+                            <span>elementUI</span>
+                        </template>
+                        <el-menu-item-group title="基础">
+                            <el-menu-item index="/element">
+                                <i class="el-icon-message"></i>
+                                介绍
+                            </el-menu-item>
+                            <el-menu-item index="/film">
+                                <i class="el-icon-message"></i>
+                                电影
+                            </el-menu-item>
+                        </el-menu-item-group>
+                    </el-submenu>
+                </el-menu>
             </div>
             <div class="content">
                 <router-view></router-view>
@@ -178,7 +195,7 @@ body {
 
 .sidebar {
     float: left;
-    width: 160px;
+    width: 240px;
     height: 100%;
 }
 

@@ -6,11 +6,11 @@
             <div>
                 <ul>
                     <li>数组</li>
-                    <li v-for="(item, index) in items" :key="index">
+                    <li v-for="(item, index) in items" :key="`arr-${index}`">
                         {{ parentMessage }}-{{ index }}-{{ item.message }}
                     </li>
                     <li>对象</li>
-                    <li v-for="(value, key, index) in object" :key="index">
+                    <li v-for="(value, key, index) in object" :key="`obj-${index}`">
                         {{ index }}-{{ key }}-{{ value }}
                     </li>
                 </ul>
