@@ -24,8 +24,12 @@ import GuildDefault from '@/pages/r/GuildDefault'
 import GuildLeft from '@/pages/r/GuildLeft'
 
 // ElementUI
-import Elementui from '@/pages/element/Element'
+import Elementui from '@/pages/element/introduce'
 import Film from '@/pages/element/Film'
+import FormRadio from '@/pages/element/FormRadio'
+import FormCheckbox from '@/pages/element/FormCheckbox'
+import FormInput from '@/pages/element/FormInput'
+import FormInputNumber from '@/pages/element/FormInputNumber'
 
 Vue.use(Router)
 
@@ -130,14 +134,34 @@ let router = new Router({
         },
         // elementUI
         {
-            path: '/element',
-            name: 'Element',
+            path: '/elementui',
+            name: 'Elementui',
             component: Elementui
         },
         {
             path: '/film',
             name: 'Film',
             component: Film
+        },
+        {
+            path: '/radio',
+            name: 'FormRadio',
+            component: FormRadio
+        },
+        {
+            path: '/checkbox',
+            name: 'FormCheckbox',
+            component: FormCheckbox
+        },
+        {
+            path: '/input',
+            name: 'FormInput',
+            component: FormInput
+        },
+        {
+            path: '/input-number',
+            name: 'FormInputNumber',
+            component: FormInputNumber
         }
     ]
 })

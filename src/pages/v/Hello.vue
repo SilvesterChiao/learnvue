@@ -90,11 +90,9 @@ import banner from '../../components/banner'
 import Dog from '../../assets/scripts/es6/class'
 import Animal from '../../assets/scripts/es6/modules'
 import { person, volume } from '../../assets/scripts/es6/modules/index'
+import { testList, testStack, testQueue, testLinkedList } from './../../assets/scripts/structure/index'
 
 export default {
-    components: {
-        banner
-    },
     name: 'hello',
     data () {
         return {
@@ -134,6 +132,11 @@ export default {
             user: []
         }
     },
+    computed: {
+        myValueWithoutNum: function () {
+            return this.text.replace(/\d/g, '')
+        }
+    },
     methods: {
         reverseMessage () {
             this.msg = this.msg.split('').reverse().join('')
@@ -155,10 +158,8 @@ export default {
                 })
         }
     },
-    computed: {
-        myValueWithoutNum: function () {
-            return this.text.replace(/\d/g, '')
-        }
+    components: {
+        banner
     },
     created () {
         var black = new Dog()
@@ -175,6 +176,10 @@ export default {
 
         console.log('person', person)
         console.log('volume', volume)
+        testList()
+        testStack()
+        testQueue()
+        // testLinkedList()
     }
 }
 </script>

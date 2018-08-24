@@ -1,27 +1,72 @@
 <template>
     <div>
-        <h1>{{ msg }}</h1>
         <div>
             <h3>表单控件绑定</h3>
-        </div>
-        <div class="cinema">
-            <h5>电影院选座</h5>
-            <div class="cinema-box">
-                <div v-for="row in rows" :key="row">
-                    <div :ref="col + '-' + row" :class="{'cinema-chair-selected': false}" class="cinema-chair" v-for="col in cols" :key="col" @click="selectChair([col, row])">
-                        {{ col }} {{ row }}
-                    </div>
+            <div>
+                <h5>单行文本</h5>
+                <input v-model="message" placeholder="edit me">
+                <p>Message is: {{ message }}</p>
+            </div>
+            <div>
+                <h5>多行文本</h5>
+                <span>Multiline message is:</span>
+                <p style="white-space: pre-line;">{{ message }}</p>
+                <br>
+                <textarea v-model="message" placeholder="add multiple lines"></textarea>
+            </div>
+            <div>
+                <h5>复选框</h5>
+                <input type="checkbox" id="checkbox" v-model="checked">
+                <label for="checkbox">{{ checked }}</label>
+                <div id='example-3'>
+                    <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+                    <label for="jack">Jack</label>
+                    <input type="checkbox" id="john" value="John" v-model="checkedNames">
+                    <label for="john">John</label>
+                    <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+                    <label for="mike">Mike</label>
+                    <br>
+                    <span>Checked names: {{ checkedNames }}</span>
                 </div>
             </div>
-
             <div>
-                <span>已选座位({{ selectedChairs.length }}个共{{ selectedChairs.length * price }}元)：</span>
-                <div>
-                    <span v-for="(selectedChair, index) in selectedChairs" :key="index">
-                        {{selectedChair[0]}}排{{ selectedChair[1] }}号
-                    </span>
+                <h5>单选按钮</h5>
+                <div id="example-4">
+                    <input type="radio" id="one" value="One" v-model="picked">
+                    <label for="one">One</label>
+                    <br>
+                    <input type="radio" id="two" value="Two" v-model="picked">
+                    <label for="two">Two</label>
+                    <br>
+                    <span>Picked: {{ picked }}</span>
                 </div>
-                <el-button type="primary" @click="submitChairs">确认</el-button>
+            </div>
+            <div>
+                <h5>选择框</h5>
+                <div id="example-5">
+                    <select v-model="selected">
+                        <option disabled value="">请选择</option>
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                    </select>
+                    <span>Selected: {{ selected }}</span>
+                </div>
+                <div id="example-6">
+                    <select v-model="selectedArray" multiple style="width: 50px;">
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                    </select>
+                    <br>
+                    <span>Selected: {{ selectedArray }}</span>
+                </div>
+                <select v-model="selected2">
+                    <option v-for="option in options" v-bind:value="option.value" :key="option.value">
+                        {{ option.text }}
+                    </option>
+                </select>
+                <span>Selected: {{ selected2 }}</span>
             </div>
         </div>
     </div>
@@ -33,59 +78,21 @@ export default {
     data () {
         return {
             msg: 'v-model',
-            price: 20,
-            rows: 5,
-            cols: 8,
-            selectedChairs: [
-            ],
-            disabledChairs: [
-                [3, 5]
+            message: '',
+            checked: false,
+            checkedNames: [],
+            picked: '',
+            selected: '',
+            selectedArray: [],
+            selected2: 'A',
+            options: [
+                { text: 'One', value: 'A' },
+                { text: 'Two', value: 'B' },
+                { text: 'Three', value: 'C' }
             ]
         }
     },
     methods: {
-        selectChair (chair) {
-            if (this.checkDisabledChairs(chair)) {
-                alert('此座位已被预定，请选择其他作为')
-                return
-            };
-            var refIndex = chair[0] + '-' + chair[1]
-            var dom = this.$refs[refIndex][0]
-            var selectedIndex = 0
-            var selected = this.selectedChairs.some(function (item, index) {
-                if (item[0] === chair[0] && item[1] === chair[1]) {
-                    selectedIndex = index
-                };
-                return item[0] === chair[0] && item[1] === chair[1]
-            })
-            if (selected) {
-                this.selectedChairs.splice(selectedIndex, 1)
-                dom.style.backgroundColor = ''
-            } else {
-                this.selectedChairs.push(chair)
-                dom.style.backgroundColor = 'green'
-            }
-        },
-        redDisabledChairs () {
-            this.disabledChairs.forEach((item, index, array) => {
-                var disabledChairsIndex = item[0] + '-' + item[1]
-                this.$refs[disabledChairsIndex][0].style.cursor = 'no-drop'
-                this.$refs[disabledChairsIndex][0].style.backgroundColor = 'red'
-            })
-        },
-        checkDisabledChairs (chair) {
-            return this.disabledChairs.some((item, index, array) => {
-                return item[0] === chair[0] && item[1] === chair[1]
-            })
-        },
-        submitChairs () {
-            console.log(this.selectedChairs)
-        }
-    },
-    mounted () {
-        this.$nextTick(() => {
-            this.redDisabledChairs()
-        })
     }
 }
 </script>
@@ -109,30 +116,5 @@ li {
 
 a {
     color: #42b983;
-}
-
-.cinema {
-}
-
-.cinema-box {
-    display: flex;
-    justify-content: center;
-    /* flex-flow: ; */
-}
-
-.cinema-chair {
-    margin: 4px;
-    height: 20px;
-    border: 1px solid #f0f0f0;
-    cursor: pointer;
-}
-
-.cinema-chair-selected {
-    background-color: green;
-}
-
-.cinema-chair-disabled {
-    background-color: red;
-    cursor: no-drop;
 }
 </style>
