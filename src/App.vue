@@ -4,10 +4,10 @@
             <el-aside class="sidebar" width="240px">
                 <el-row>
                     <el-col :span="24">
-                        kkk
+                        {{ $route.path }}
                     </el-col>
                 </el-row>
-                <el-menu mode="vertical" default-active="1" class="el-menu-vertical-demo" router>
+                <el-menu mode="vertical" default-active="1" class="el-menu-vertical-demo" router background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
                     <el-menu-item index="/">
                         <i class="fa fa-home"></i>
                         <span slot="title">首页</span>
@@ -15,129 +15,47 @@
                     <el-submenu index="1" :show-timeout="500" :hide-timeout="800">
                         <template slot="title">
                             <i class="el-icon-location"></i>
-                            <span>Vue</span>
+                            <span>Vue全家桶</span>
                         </template>
-                        <el-menu-item-group title="基础">
-                            <el-menu-item index="/introduce">
-                                <i class="el-icon-upload"></i>
-                                介绍
-                            </el-menu-item>
-                            <el-menu-item index="/template">
-                                <i class="el-icon-error"></i>
-                                模板语法
-                            </el-menu-item>
-                            <el-menu-item index="/computed">
-                                <i class="el-icon-success"></i>
-                                计算属性
-                            </el-menu-item>
-                            <el-menu-item index="/v-bind">
-                                <i class="el-icon-warning"></i>
-                                Class与Style绑定
-                            </el-menu-item>
-                            <el-menu-item index="/v-if">
-                                <i class="el-icon-sort-down"></i>
-                                条件渲染
-                            </el-menu-item>
-                            <el-menu-item index="/v-for">
-                                <i class="el-icon-sort-up"></i>
-                                列表渲染
-                            </el-menu-item>
-                            <el-menu-item index="/v-on">
-                                <i class="el-icon-arrow-left"></i>
-                                事件处理器
-                            </el-menu-item>
-                            <el-menu-item index="/v-model">
-                                <i class="el-icon-circle-plus"></i>
-                                表单
-                            </el-menu-item>
-                        </el-menu-item-group>
-                        <el-menu-item-group title="组件">
-                            <el-menu-item index="/component">
-                                <i class="el-icon-circle-plus-outline"></i>
-                                组件
-                            </el-menu-item>
-                            <el-menu-item index="/prop">
-                                <i class="el-icon-back"></i>
-                                属性
-                            </el-menu-item>
-                            <el-menu-item index="/events">
-                                <i class="el-icon-circle-close"></i>
-                                自定义事件
-                            </el-menu-item>
-                            <el-menu-item index="/slot">
-                                <i class="el-icon-date"></i>
-                                插槽
-                            </el-menu-item>
-                            <el-menu-item index="/dynamic">
-                                <i class="el-icon-caret-left"></i>
-                                动态组件
-                            </el-menu-item>
-                            <el-menu-item index="/transitions">
-                                <i class="el-icon-close"></i>
-                                过渡效果
-                            </el-menu-item>
-                        </el-menu-item-group>
+                        <el-menu-item index="/v">
+                            vue
+                        </el-menu-item>
+                        <el-menu-item index="/r">
+                            vue-router
+                        </el-menu-item>
+                        <el-menu-item index="/x">
+                            vuex
+                        </el-menu-item>
                     </el-submenu>
                     <el-submenu index="2" :show-timeout="500" :hide-timeout="800">
-                        <template slot="title">
-                            <i class="el-icon-menu"></i>
-                            <span>vue-router</span>
-                        </template>
-                        <el-menu-item-group title="基础">
-                            <el-menu-item index="/guide">
-                                <i class="el-icon-message"></i>
-                                介绍
-                            </el-menu-item>
-                        </el-menu-item-group>
-                    </el-submenu>
-                    <el-submenu index="3" :show-timeout="500" :hide-timeout="800">
                         <template slot="title">
                             <i class="el-icon-setting"></i>
                             <span>elementUI</span>
                         </template>
                         <el-menu-item-group title="基础">
                             <el-menu-item index="/elementui">
-                                <i class="el-icon-message"></i>
                                 介绍
                             </el-menu-item>
                             <el-menu-item index="/film">
-                                <i class="el-icon-message"></i>
                                 电影
                             </el-menu-item>
                         </el-menu-item-group>
                         <el-menu-item-group title="Form">
                             <el-menu-item index="/radio">
-                                <i class="el-icon-message"></i>
                                 Radio 单选框
                             </el-menu-item>
                             <el-menu-item index="/checkbox">
-                                <i class="el-icon-message"></i>
                                 Checkbox 多选框
                             </el-menu-item>
                             <el-menu-item index="/input">
-                                <i class="el-icon-message"></i>
                                 Input 输入框
                             </el-menu-item>
                             <el-menu-item index="/input-number">
-                                <i class="el-icon-message"></i>
                                 NumberInput 计数器
                             </el-menu-item>
                             <el-menu-item index="/select">
-                                <i class="el-icon-message"></i>
                                 Select 选择器
                             </el-menu-item>
-                        </el-menu-item-group>
-                        <el-menu-item-group title="Data">
-
-                        </el-menu-item-group>
-                        <el-menu-item-group title="Notice">
-
-                        </el-menu-item-group>
-                        <el-menu-item-group title="Navigation">
-
-                        </el-menu-item-group>
-                        <el-menu-item-group title="Others">
-
                         </el-menu-item-group>
                     </el-submenu>
                     <el-submenu index="4">
@@ -147,6 +65,9 @@
                         </template>
                         <el-menu-item index="/markdown">
                             markdown编辑器
+                        </el-menu-item>
+                        <el-menu-item index="/todolist">
+                            todolist
                         </el-menu-item>
                     </el-submenu>
                     <el-menu-item index="/">
@@ -219,6 +140,10 @@ body {
     color: #2c3e50;
 }
 
+.el-menu {
+    border-right: none;
+}
+
 .el-menu-item .fa {
     vertical-align: middle;
     margin-right: 5px;
@@ -235,6 +160,7 @@ body {
     float: left;
     width: 240px;
     height: 100%;
+    background-color: #545c64;
 }
 
 .sidebar ul {

@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-// Vue官网教程
 import Hello from '@/pages/v/Hello'
-import Introduce from '@/pages/v/Introduce'
+
+// Vue官网教程
+import V from '@/pages/v/Index'
 import Template from '@/pages/v/Template'
 import Computed from '@/pages/v/Computed'
 import Vbind from '@/pages/v/Vbind'
@@ -19,9 +20,12 @@ import Dynamic from '@/pages/v/Dynamic'
 import Transitions from '@/pages/v/Transitions'
 
 // vue-router教程
-import Guide from '@/pages/r/Guide'
+import R from '@/pages/r/Index'
 import GuildDefault from '@/pages/r/GuildDefault'
 import GuildLeft from '@/pages/r/GuildLeft'
+
+// vuex教程
+import X from '@/pages/x/Index'
 
 // ElementUI
 import Elementui from '@/pages/element/introduce'
@@ -33,7 +37,8 @@ import FormInputNumber from '@/pages/element/FormInputNumber'
 import FormSelect from '@/pages/element/FormSelect'
 
 // 工具箱
-import Markdown from '@/pages/toolbox/markdown'
+import Markdown from '@/pages/toolbox/Markdown'
+import TodoList from '@/pages/toolbox/TodoList'
 
 Vue.use(Router)
 
@@ -47,80 +52,85 @@ let router = new Router({
             component: Hello
         },
         {
-            path: '/introduce',
-            name: 'Introduce',
-            component: Introduce
-        },
-        {
-            path: '/template',
-            name: 'Template',
-            component: Template
-        },
-        {
-            path: '/computed',
-            name: 'Computed',
-            component: Computed
-        },
-        {
-            path: '/v-bind',
-            name: 'V-bind',
-            component: Vbind
-        },
-        {
-            path: '/v-if',
-            name: 'V-if',
-            component: Vif
-        },
-        {
-            path: '/v-for',
-            name: 'V-for',
-            component: Vfor
-        },
-        {
-            path: '/v-on',
-            name: 'V-on',
-            component: Von
-        },
-        {
-            path: '/v-model',
-            name: 'V-model',
-            component: Vmodel
-        },
-        {
-            path: '/components',
-            name: 'Components',
-            component: Components
-        },
-        {
-            path: '/transitions',
-            name: 'Transitions',
-            component: Transitions
-        },
-        {
-            path: '/prop',
-            name: 'Prop',
-            component: Prop
-        },
-        {
-            path: '/events',
-            name: 'Events',
-            component: Events
-        },
-        {
-            path: '/slot',
-            name: 'Slot',
-            component: Slot
-        },
-        {
-            path: '/dynamic',
-            name: 'Dynamic',
-            component: Dynamic
+            path: '/v',
+            name: 'VueIndex',
+            component: V,
+            children: [
+                {
+                    path: ''
+                },
+                {
+                    path: 'template',
+                    name: 'Template',
+                    component: Template
+                },
+                {
+                    path: 'computed',
+                    name: 'Computed',
+                    component: Computed
+                },
+                {
+                    path: 'v-bind',
+                    name: 'V-bind',
+                    component: Vbind
+                },
+                {
+                    path: 'v-if',
+                    name: 'V-if',
+                    component: Vif
+                },
+                {
+                    path: 'v-for',
+                    name: 'V-for',
+                    component: Vfor
+                },
+                {
+                    path: 'v-on',
+                    name: 'V-on',
+                    component: Von
+                },
+                {
+                    path: 'v-model',
+                    name: 'V-model',
+                    component: Vmodel
+                },
+                {
+                    path: 'components',
+                    name: 'Components',
+                    component: Components
+                },
+                {
+                    path: 'transitions',
+                    name: 'Transitions',
+                    component: Transitions
+                },
+                {
+                    path: 'prop',
+                    name: 'Prop',
+                    component: Prop
+                },
+                {
+                    path: 'events',
+                    name: 'Events',
+                    component: Events
+                },
+                {
+                    path: 'slot',
+                    name: 'Slot',
+                    component: Slot
+                },
+                {
+                    path: 'dynamic',
+                    name: 'Dynamic',
+                    component: Dynamic
+                }
+            ]
         },
         // vue-router
         {
-            path: '/guide',
-            name: 'Guide',
-            component: Guide,
+            path: '/r',
+            name: 'RouterIndex',
+            component: R,
             children: [
                 {
                     path: '',
@@ -135,6 +145,12 @@ let router = new Router({
                     }
                 }
             ]
+        },
+        // vuex
+        {
+            path: '/x',
+            name: 'XIndex',
+            component: X
         },
         // elementUI
         {
@@ -176,6 +192,11 @@ let router = new Router({
             path: '/markdown',
             name: 'Markdown',
             component: Markdown
+        },
+        {
+            path: '/todolist',
+            name: 'TodoList',
+            component: TodoList
         }
     ]
 })
