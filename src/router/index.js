@@ -32,6 +32,9 @@ import FormInput from '@/pages/element/FormInput'
 import FormInputNumber from '@/pages/element/FormInputNumber'
 import FormSelect from '@/pages/element/FormSelect'
 
+// 工具箱
+import Markdown from '@/pages/toolbox/markdown'
+
 Vue.use(Router)
 
 let router = new Router({
@@ -168,6 +171,11 @@ let router = new Router({
             path: '/select',
             name: 'FormSelect',
             component: FormSelect
+        },
+        {
+            path: '/markdown',
+            name: 'Markdown',
+            component: Markdown
         }
     ]
 })
