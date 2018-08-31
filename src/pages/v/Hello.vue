@@ -47,6 +47,24 @@
         <br>
         <hr>
         <br>
+        <div>
+            <h3>vuex</h3>
+            <div>
+                <h5></h5>
+                <div>
+                    <p>{{ number }}</p>
+                    <p>{{ isZh }}</p>
+                    <button @click="add">add</button>
+                    <button @click="changeFu">changeFu</button>
+                </div>
+            </div>
+            <div>
+                <h5>modules</h5>
+                <div>
+                    <p>动物数量: {{ animalCount }}</p>
+                </div>
+            </div>
+        </div>
         <!-- <h2>Essential Links</h2>
         <ul>
             <li>
@@ -135,6 +153,15 @@ export default {
     computed: {
         myValueWithoutNum: function () {
             return this.text.replace(/\d/g, '')
+        },
+        number () {
+            return this.$store.state.number
+        },
+        isZh () {
+            return this.$store.getters.isZh
+        },
+        animalCount () {
+            return this.$store.state.a.count
         }
     },
     methods: {
@@ -156,6 +183,17 @@ export default {
                 .catch(function (error) {
                     console.log(error)
                 })
+        },
+        add () {
+            this.$store.commit('add')
+            this.$store.commit('increment')
+        },
+        changeFu () {
+            this.$store.dispatch('changFu', {
+                flag: true
+            }).then(() => {
+                console.log('action')
+            })
         }
     },
     components: {

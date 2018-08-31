@@ -3,10 +3,12 @@
 import Vue from 'vue'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import 'font-awesome/css/font-awesome.css'
 import animate from 'animate.css'
 import 'animate.css/animate.css'
 import App from './App'
 import router from './router'
+import store from './store/index'
 import axios from 'axios'
 
 Vue.config.productionTip = false
@@ -19,6 +21,7 @@ Vue.prototype.axios = axios
 new Vue({
     el: '#app',
     router,
+    store,
     template: '<App/>',
     components: { App }
 })

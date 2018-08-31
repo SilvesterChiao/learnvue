@@ -1,33 +1,23 @@
 <template>
     <div id="app">
-        <div class="header">
-            <router-link to="/" class="logo">Blog</router-link>
-            <ul>
-                <li>
-                    <template v-if="!logined">
-                        <router-link to="/">登陆</router-link>
-                        <router-link to="/">注册</router-link>
-                    </template>
-                    <template v-else>
-                        <router-link to="/">发表</router-link>
-                        <router-link to="/">退出</router-link>
-                    </template>
-                </li>
-            </ul>
-        </div>
-        <div class="main">
-            <div class="sidebar">
+        <el-container>
+            <el-aside class="sidebar" width="240px">
+                <el-row>
+                    <el-col :span="24">
+                        kkk
+                    </el-col>
+                </el-row>
                 <el-menu mode="vertical" default-active="1" class="el-menu-vertical-demo" router>
+                    <el-menu-item index="/">
+                        <i class="fa fa-home"></i>
+                        <span slot="title">首页</span>
+                    </el-menu-item>
                     <el-submenu index="1" :show-timeout="500" :hide-timeout="800">
                         <template slot="title">
                             <i class="el-icon-location"></i>
                             <span>Vue</span>
                         </template>
                         <el-menu-item-group title="基础">
-                            <el-menu-item index="/">
-                                <i class="el-icon-message"></i>
-                                首页
-                            </el-menu-item>
                             <el-menu-item index="/introduce">
                                 <i class="el-icon-upload"></i>
                                 介绍
@@ -132,6 +122,10 @@
                                 <i class="el-icon-message"></i>
                                 NumberInput 计数器
                             </el-menu-item>
+                            <el-menu-item index="/select">
+                                <i class="el-icon-message"></i>
+                                Select 选择器
+                            </el-menu-item>
                         </el-menu-item-group>
                         <el-menu-item-group title="Data">
 
@@ -147,12 +141,30 @@
                         </el-menu-item-group>
                     </el-submenu>
                 </el-menu>
-            </div>
-            <div class="content">
-                <router-view></router-view>
-            </div>
-        </div>
-        <!-- <img src="./assets/logo.png"> -->
+            </el-aside>
+            <el-container class="main">
+                <el-header class="header">
+                    <router-link to="/" class="logo">Blog</router-link>
+                    <ul>
+                        <li>
+                            <template v-if="!logined">
+                                <router-link to="/">登陆</router-link>
+                                <router-link to="/">注册</router-link>
+                            </template>
+                            <template v-else>
+                                <router-link to="/">发表</router-link>
+                                <router-link to="/">退出</router-link>
+                            </template>
+                        </li>
+                    </ul>
+                </el-header>
+                <el-main class="content">
+                    <!-- <img src="./assets/logo.png"> -->
+                    <router-view></router-view>
+                </el-main>
+                <el-footer>Footer</el-footer>
+            </el-container>
+        </el-container>
     </div>
 </template>
 
@@ -194,33 +206,16 @@ body {
     color: #2c3e50;
 }
 
-.header {
-    min-height: 50px;
-    background-color: #84c8b3;
+.el-menu-item .fa {
+    vertical-align: middle;
+    margin-right: 5px;
+    width: 24px;
+    text-align: center;
+    font-size: 18px;
 }
 
-.header .logo {
-    margin-left: 20px;
-    line-height: 50px;
-    text-decoration: none;
-}
-
-.header ul {
-    float: right;
-    margin-right: 20px;
-    list-style: none;
-}
-
-.header ul li {
-}
-.header ul li a {
-    margin-left: 15px;
-    line-height: 50px;
-    text-decoration: none;
-}
-
-.main {
-    height: calc(100% - 50px);
+.el-container {
+    height: 100%;
 }
 
 .sidebar {
@@ -252,9 +247,49 @@ body {
     background-color: #eee;
 }
 
+.main {
+    padding: 20px;
+    height: 100%;
+    background-color: #f2f2f2;
+}
+
+.header {
+    min-height: 50px;
+    border-radius: 4px;
+    background-color: #84c8b3;
+}
+
+.header .logo {
+    margin-left: 20px;
+    line-height: 50px;
+    text-decoration: none;
+}
+
+.header ul {
+    float: right;
+    margin-right: 20px;
+    list-style: none;
+}
+
+.header ul li {
+}
+
+.header ul li a {
+    margin-left: 15px;
+    line-height: 50px;
+    text-decoration: none;
+}
+
 .content {
     overflow: auto;
+    margin-top: 16px;
     padding: 10px 16px;
-    height: 100%;
+    height: calc(100% - 50px);
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.content::-webkit-scrollbar {
+    display: none;
 }
 </style>

@@ -30,6 +30,7 @@ import FormRadio from '@/pages/element/FormRadio'
 import FormCheckbox from '@/pages/element/FormCheckbox'
 import FormInput from '@/pages/element/FormInput'
 import FormInputNumber from '@/pages/element/FormInputNumber'
+import FormSelect from '@/pages/element/FormSelect'
 
 Vue.use(Router)
 
@@ -162,6 +163,11 @@ let router = new Router({
             path: '/input-number',
             name: 'FormInputNumber',
             component: FormInputNumber
+        },
+        {
+            path: '/select',
+            name: 'FormSelect',
+            component: FormSelect
         }
     ]
 })
