@@ -66,7 +66,7 @@
                         <el-menu-item index="/markdown">
                             markdown编辑器
                         </el-menu-item>
-                        <el-menu-item index="/todolist">
+                        <el-menu-item index="/toollist">
                             todolist
                         </el-menu-item>
                     </el-submenu>
@@ -114,6 +114,13 @@ export default {
         checkLogin () {
 
         }
+    },
+    created () {
+        this.$notify({
+            title: '提示',
+            message: '登陆成功',
+            offset: 100
+        })
     }
 }
 </script>

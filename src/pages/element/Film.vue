@@ -16,7 +16,7 @@
             </el-row>
             <el-row>
                 <el-col :span="24">
-                    <el-table :data="films" style="width: 100%" :stripe="true">
+                    <el-table :data="films" style="width: 100%" :stripe="true" v-loading="true">
                         <el-table-column prop="id" label="id" width="80"></el-table-column>
                         <el-table-column prop="name" label="影片名称" width="180"></el-table-column>
                         <el-table-column prop="title" label="标题" width="180"></el-table-column>

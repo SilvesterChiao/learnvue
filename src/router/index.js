@@ -38,7 +38,7 @@ import FormSelect from '@/pages/element/FormSelect'
 
 // 工具箱
 import Markdown from '@/pages/toolbox/Markdown'
-import TodoList from '@/pages/toolbox/TodoList'
+import ToolList from '@/pages/toolbox/ToolList'
 
 Vue.use(Router)
 
@@ -194,9 +194,9 @@ let router = new Router({
             component: Markdown
         },
         {
-            path: '/todolist',
-            name: 'TodoList',
-            component: TodoList
+            path: '/toollist',
+            name: 'ToolList',
+            component: ToolList
         }
     ]
 })
