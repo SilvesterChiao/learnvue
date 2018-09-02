@@ -40,6 +40,11 @@ import FormSelect from '@/pages/element/FormSelect'
 import Markdown from '@/pages/toolbox/Markdown'
 import ToolList from '@/pages/toolbox/ToolList'
 
+// 算法
+import List from '@/pages/structure/List'
+import Stack from '@/pages/structure/Stack'
+import Queue from '@/pages/structure/Queue'
+
 Vue.use(Router)
 
 let router = new Router({
@@ -188,6 +193,7 @@ let router = new Router({
             name: 'FormSelect',
             component: FormSelect
         },
+        // 工具箱
         {
             path: '/markdown',
             name: 'Markdown',
@@ -197,6 +203,22 @@ let router = new Router({
             path: '/toollist',
             name: 'ToolList',
             component: ToolList
+        },
+        // 算法
+        {
+            path: '/list',
+            name: 'List',
+            component: List
+        },
+        {
+            path: '/stack',
+            name: 'Stack',
+            component: Stack
+        },
+        {
+            path: '/queue',
+            name: 'Queue',
+            component: Queue
         }
     ]
 })

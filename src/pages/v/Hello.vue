@@ -108,7 +108,6 @@ import banner from '../../components/banner'
 import Dog from '../../assets/scripts/es6/class'
 import Animal from '../../assets/scripts/es6/modules'
 import { person, volume } from '../../assets/scripts/es6/modules/index'
-import { testList, testStack, testQueue, testLinkedList } from './../../assets/scripts/structure/index'
 
 export default {
     name: 'hello',
@@ -214,10 +213,6 @@ export default {
 
         console.log('person', person)
         console.log('volume', volume)
-        testList()
-        testStack()
-        testQueue()
-        // testLinkedList()
     }
 }
 </script>
