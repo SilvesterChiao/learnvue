@@ -39,11 +39,11 @@ import FormSelect from '@/pages/element/FormSelect'
 // 工具箱
 import Markdown from '@/pages/toolbox/Markdown'
 import ToolList from '@/pages/toolbox/ToolList'
+import Layout from '@/pages/toolbox/Layout'
+import Animate from '@/pages/toolbox/Animate'
 
 // 算法
-import List from '@/pages/structure/List'
-import Stack from '@/pages/structure/Stack'
-import Queue from '@/pages/structure/Queue'
+import Structure from '@/pages/structure/Index'
 
 Vue.use(Router)
 
@@ -204,21 +204,21 @@ let router = new Router({
             name: 'ToolList',
             component: ToolList
         },
+        {
+            path: '/layout',
+            name: 'Layout',
+            component: Layout
+        },
+        {
+            path: '/animate',
+            name: 'Animate',
+            component: Animate
+        },
         // 算法
         {
-            path: '/list',
-            name: 'List',
-            component: List
-        },
-        {
-            path: '/stack',
-            name: 'Stack',
-            component: Stack
-        },
-        {
-            path: '/queue',
-            name: 'Queue',
-            component: Queue
+            path: '/structure',
+            name: 'Structure',
+            component: Structure
         }
     ]
 })

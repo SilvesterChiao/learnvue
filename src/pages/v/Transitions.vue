@@ -1,31 +1,31 @@
 <template>
     <div>
         <h3>过渡效果</h3>
-        <button @click="fade = !fade">
+        <el-button @click="fade = !fade" size="small">
             toggle
-        </button>
+        </el-button>
         <transition name="fade" :duration="10000">
             <p v-if="fade">fade</p>
         </transition>
-        <button @click="slideFade = !slideFade">
+        <el-button @click="slideFade = !slideFade" size="small">
             toggle
-        </button>
+        </el-button>
         <transition name="slide-fade">
             <p v-if="slideFade">
                 slide-fade
             </p>
         </transition>
-        <button @click="bounce = !bounce">
+        <el-button @click="bounce = !bounce" size="small">
             toggle
-        </button>
+        </el-button>
         <transition name="bounce">
             <p v-if="bounce">
                 bouncebouncebouncebouncebouncebouncebouncebouncebouncebouncebouncebouncebouncebouncebounce <br> bouncebouncebouncebouncebouncebouncebouncebouncebouncebouncebouncebouncebouncebouncebounce
             </p>
         </transition>
-        <button @click="animate = !animate">
+        <el-button @click="animate = !animate" size="small">
             toggle
-        </button>
+        </el-button>
         <transition name="custom-classes-transition" enter-active-class="animated tada" leave-active-class="animated bounceOutRight">
             <p v-if="animate">
                 custom-classes-transition
@@ -36,9 +36,9 @@
             appear appear-class appear-to-class appear-active-class before-appear appear after-appear appear-cancelled
         </p>
         <div>
-            <button @click="appear = !appear">
+            <el-button @click="appear = !appear" size="small">
                 toggle
-            </button>
+            </el-button>
             <transition name="appear" appear appear-class="custom-appear-class" appear-to-class="custom-appear-to-class" appear-active-class="animated shake custom-appear-active-class" appear-leave-action-class="animated jello">
                 <p v-if="appear">
                     appear
@@ -50,9 +50,9 @@
             <div>
                 <h5>过渡模式</h5>
                 <div>
-                    <button @click="isEditing = !isEditing">
+                    <el-button @click="isEditing = !isEditing" size="small">
                         toggle
-                    </button>
+                    </el-button>
                     <transition name="slide-fade" mode="out-in">
                         <p v-if="isEditing" key="save">save</p>
                         <p v-else key="edit">edit</p>
@@ -67,8 +67,8 @@
             </p>
             <div>
                 <div id="list-demo" class="demo">
-                    <button v-on:click="add">Add</button>
-                    <button v-on:click="remove">Remove</button>
+                    <el-button v-on:click="add" size="small">Add</el-button>
+                    <el-button v-on:click="remove" size="small">Remove</el-button>
                     <transition-group name="list" tag="p">
                         <span v-for="item in items" v-bind:key="item" class="list-item">
                             {{ item }}
@@ -76,7 +76,7 @@
                     </transition-group>
                 </div>
                 <div id="flip-list-demo" class="demo">
-                    <button v-on:click="shuffle">Shuffle</button>
+                    <el-button v-on:click="shuffle" size="small">Shuffle</el-button>
                     <transition-group name="flip-list" tag="ul">
                         <li v-for="item in items" v-bind:key="item">
                             {{ item }}

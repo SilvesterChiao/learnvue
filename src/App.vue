@@ -69,20 +69,20 @@
                         <el-menu-item index="/toollist">
                             todolist
                         </el-menu-item>
+                        <el-menu-item index="/layout">
+                            布局
+                        </el-menu-item>
+                        <el-menu-item index="/animate">
+                            特效
+                        </el-menu-item>
                     </el-submenu>
                     <el-submenu index="5">
                         <template slot="title">
                             <i class="el-icon-bell"></i>
                             <span>算法</span>
                         </template>
-                        <el-menu-item index="/list">
-                            列表
-                        </el-menu-item>
-                        <el-menu-item index="/stack">
-                            栈
-                        </el-menu-item>
-                        <el-menu-item index="/queue">
-                            队列
+                        <el-menu-item index="/structure">
+                            数据结构
                         </el-menu-item>
                     </el-submenu>
                     <el-menu-item index="/">
