@@ -11,14 +11,14 @@ export default {
         }
     },
     mutations: {
-        increment (state) {
+        incrementDog (state) {
             state.count++
             console.log('dog: mutations')
         }
     },
     actions: {
-        increment ({ commit }) {
-            commit('increment')
+        incrementDog ({ commit }) {
+            commit('incrementDog')
             console.log('dog: actions')
         }
     }

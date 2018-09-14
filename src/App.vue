@@ -40,23 +40,6 @@
                                 电影
                             </el-menu-item>
                         </el-menu-item-group>
-                        <el-menu-item-group title="Form">
-                            <el-menu-item index="/radio">
-                                Radio 单选框
-                            </el-menu-item>
-                            <el-menu-item index="/checkbox">
-                                Checkbox 多选框
-                            </el-menu-item>
-                            <el-menu-item index="/input">
-                                Input 输入框
-                            </el-menu-item>
-                            <el-menu-item index="/input-number">
-                                NumberInput 计数器
-                            </el-menu-item>
-                            <el-menu-item index="/select">
-                                Select 选择器
-                            </el-menu-item>
-                        </el-menu-item-group>
                     </el-submenu>
                     <el-submenu index="4">
                         <template slot="title">
@@ -85,33 +68,31 @@
                             数据结构
                         </el-menu-item>
                     </el-submenu>
-                    <el-menu-item index="/">
-                        <i class="fa fa-home"></i>
-                        <span slot="title">首页</span>
+                    <el-menu-item index="/setting">
+                        <i class="el-icon-setting"></i>
+                        <span slot="title">设置</span>
                     </el-menu-item>
                 </el-menu>
             </el-aside>
             <el-container class="main">
                 <el-header class="header">
-                    <router-link to="/" class="logo">Blog</router-link>
-                    <ul>
-                        <li>
-                            <template v-if="!logined">
-                                <router-link to="/">登陆</router-link>
-                                <router-link to="/">注册</router-link>
-                            </template>
-                            <template v-else>
-                                <router-link to="/">发表</router-link>
-                                <router-link to="/">退出</router-link>
-                            </template>
-                        </li>
-                    </ul>
+                    <router-link to="/" class="logo">SilvesterChiao</router-link>
+                    <el-dropdown style="float: right; height: 60px; line-height: 60px;">
+                        <i class="el-icon-setting"></i>
+                        <el-dropdown-menu slot="dropdown">
+                            <el-dropdown-item>查看</el-dropdown-item>
+                            <el-dropdown-item>新增</el-dropdown-item>
+                            <el-dropdown-item>删除</el-dropdown-item>
+                        </el-dropdown-menu>
+                    </el-dropdown>
                 </el-header>
                 <el-main class="content">
                     <!-- <img src="./assets/logo.png"> -->
                     <router-view></router-view>
                 </el-main>
-                <el-footer>Footer</el-footer>
+                <el-footer class="foot">
+                    <p>Copyright &copy; 2018 SilvesterChiao.</p>
+                </el-footer>
             </el-container>
         </el-container>
     </div>
@@ -215,42 +196,40 @@ body {
 }
 
 .header {
-    min-height: 50px;
     border-radius: 4px;
     background-color: #84c8b3;
 }
 
 .header .logo {
-    margin-left: 20px;
-    line-height: 50px;
+    line-height: 60px;
     text-decoration: none;
-}
-
-.header ul {
-    float: right;
-    margin-right: 20px;
-    list-style: none;
-}
-
-.header ul li {
-}
-
-.header ul li a {
-    margin-left: 15px;
-    line-height: 50px;
-    text-decoration: none;
+    color: #545c64;
 }
 
 .content {
     overflow: auto;
     margin-top: 16px;
     padding: 10px 16px;
-    height: calc(100% - 50px);
+    height: calc(100% - 60px);
     border-radius: 4px;
     background-color: #fff;
 }
 
 .content::-webkit-scrollbar {
     display: none;
+}
+
+.foot {
+    margin-top: 10px;
+    height: 50px;
+}
+
+.foot p {
+    line-height: 50px;
+    text-align: center;
+    font-family: 'Arial';
+    font-size: 18px;
+    font-weight: 600;
+    color: #999;
 }
 </style>

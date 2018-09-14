@@ -158,13 +158,16 @@ export default {
 }
 @keyframes bounce-in {
     0% {
-        transform: scale(0);
+        transform: translateY(0);
+        /* transform: scale(0); */
     }
     50% {
-        transform: scale(1.5);
+        transform: translateY(20px);
+        /* transform: scale(1.5); */
     }
     100% {
-        transform: scale(1);
+        transform: translateY(0);
+        /* transform: scale(1); */
     }
 }
 

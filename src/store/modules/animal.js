@@ -6,20 +6,21 @@ export default {
         count: 0
     },
     getters: {
-        doubleAnimalCount (state) {
+        doubleAnimalCount (state, getters, rootState) {
             return state.count * 2
         }
     },
     mutations: {
-        increment (state) {
+        incrementAnimal (state) {
             state.count++
             console.log('animal: mutations')
         }
     },
     actions: {
-        increment ({ commit }) {
-            commit('increment')
+        incrementAnimal ({ state, commit, rootState }) {
+            commit('incrementAnimal')
             console.log('animal: actions')
+            console.log('rootState', rootState)
         }
     }
 }

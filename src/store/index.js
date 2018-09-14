@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import animal from './modules/animal.js'
 import dog from './modules/dog.js'
+import cat from './modules/cat.js'
 
 Vue.use(Vuex)
 
@@ -10,12 +11,16 @@ export default new Vuex.Store({
         number: 0
     },
     getters: {
-        isZh (state) {
+        isZh (state, getters) {
+            console.log('getters', getters)
             if (state.number > 0) {
                 return true
             } else {
                 return false
             }
+        },
+        isFu: state => number => {
+            return state.number === number
         }
     },
     mutations: {
@@ -33,7 +38,7 @@ export default new Vuex.Store({
                     setTimeout(() => {
                         context.commit('fu')
                         resolve()
-                    }, 2000)
+                    }, 500)
                 } else {
                     reject()
                 }
@@ -42,6 +47,7 @@ export default new Vuex.Store({
     },
     modules: {
         a: animal,
-        b: dog
+        d: dog,
+        c: cat
     }
 })
