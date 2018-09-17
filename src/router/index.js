@@ -49,6 +49,7 @@ Vue.use(Router)
 
 let router = new Router({
     mode: 'history',
+    base: '/learnvue/',
     routes: [
         // vue
         {
