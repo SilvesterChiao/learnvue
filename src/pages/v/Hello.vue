@@ -1,41 +1,5 @@
 <template>
     <div class="hello">
-        <div v-html="html">
-
-        </div>
-        {{ num + 1 }} {{ status ? 'success' : 'fail' }}
-        <div>
-            <a v-bind:href="link" v-bind:title="msg">百度</a>
-            <h3>v-for</h3>
-            <p v-for="(item, index) in list" :class="{odd: index % 2}" :key="index">
-                {{ item.name }} - {{ item.age }} - {{ index }}
-            </p>
-        </div>
-        <div>
-            <p v-for="(value, key) in obj" :key="key">
-                {{ key + ': ' + value }}
-            </p>
-        </div>
-        <div>
-            <p v-if="status">A</p>
-            <p v-else>B</p>
-            <button v-on:click="toggle">toggle</button>
-        </div>
-        <div>
-            <h3>子组件</h3>
-            <banner @my-event="onComaMyEvent" number=4>
-                <p slot="header">header</p>
-                <p slot="footer">footer</p>
-            </banner>
-        </div>
-        <div>
-            <input type="text" v-model="text">
-            <p>{{ text }}</p>
-        </div>
-        <div>
-            <p>计算属性</p>
-            {{ myValueWithoutNum }}
-        </div>
         <div>
             <p>axios</p>
             <ul>
@@ -85,7 +49,6 @@
 
 <script>
 import axios from 'axios'
-import banner from '../../components/banner'
 import Dog from '../../assets/scripts/es6/class'
 import Animal from '../../assets/scripts/es6/modules'
 import { person, volume } from '../../assets/scripts/es6/modules/index'
@@ -94,57 +57,10 @@ export default {
     name: 'hello',
     data () {
         return {
-            msg: 'Welcome to Your Vue.js App',
-            message: '页面加载于 ' + new Date(),
-            seen: true,
-            todos: [
-                {
-                    text: '学习 JavaScript'
-                },
-                {
-                    text: '学习 Vue'
-                },
-                {
-                    text: '整个牛项目'
-                }
-            ],
-            text: '胡怒火空港',
-            html: '<ul><li>火影忍者</li><li>死神</li><li>海贼王</li></ul>',
-            num: 1,
-            status: true,
-            link: 'https://www.baidu.com',
-            list: [
-                {
-                    name: '李雷',
-                    age: 15
-                },
-                {
-                    name: '韩梅梅',
-                    age: 15
-                }
-            ],
-            obj: {
-                name: '李雷',
-                age: 15
-            },
             user: []
         }
     },
-    computed: {
-        myValueWithoutNum: function () {
-            return this.text.replace(/\d/g, '')
-        }
-    },
     methods: {
-        reverseMessage () {
-            this.msg = this.msg.split('').reverse().join('')
-        },
-        toggle: function () {
-            this.status = !this.status
-        },
-        onComaMyEvent (parmfromA) {
-            console.log('onComaMyEvent ' + parmfromA)
-        },
         getUser () {
             var vm = this
             axios.get('http://localhost:3000/user')
@@ -154,15 +70,20 @@ export default {
                 .catch(function (error) {
                     console.log(error)
                 })
+        },
+        getInfo () {
+            fetch('http://192.168.0.121:3004/sites').then(res => {
+                console.log(res)
+            }).catch(err => {
+                console.log(err)
+            })
         }
     },
-    components: {
-        banner
-    },
     created () {
+        // this.getUser();
+        this.getInfo()
         var black = new Dog()
         black.say('你好我叫小黑')
-        // this.getUser();
 
         var animal = new Animal('小白', 'white')
         animal.sayName()

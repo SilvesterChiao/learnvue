@@ -43,6 +43,7 @@ import Layout from '@/pages/toolbox/Layout'
 import Animate from '@/pages/toolbox/Animate'
 
 // 算法
+import Algorithm from '@/pages/algorithm/Index'
 import Structure from '@/pages/structure/Index'
 
 Vue.use(Router)
@@ -55,80 +56,128 @@ let router = new Router({
         {
             path: '/',
             name: 'Hello',
-            component: Hello
+            component: Hello,
+            meta: {
+                CName: '首页'
+            }
         },
         {
             path: '/v',
             name: 'VueIndex',
             component: V,
+            meta: {
+                CName: 'Vue'
+            },
             children: [
                 {
-                    path: ''
+                    path: '',
+                    meta: {
+                        CName: '简介'
+                    }
                 },
                 {
                     path: 'template',
                     name: 'Template',
-                    component: Template
+                    component: Template,
+                    meta: {
+                        CName: '模板语法'
+                    }
                 },
                 {
                     path: 'computed',
                     name: 'Computed',
-                    component: Computed
+                    component: Computed,
+                    meta: {
+                        CName: '计算属性'
+                    }
                 },
                 {
                     path: 'v-bind',
                     name: 'V-bind',
-                    component: Vbind
+                    component: Vbind,
+                    meta: {
+                        CName: '数据绑定'
+                    }
                 },
                 {
                     path: 'v-if',
                     name: 'V-if',
-                    component: Vif
+                    component: Vif,
+                    meta: {
+                        CName: '条件渲染'
+                    }
                 },
                 {
                     path: 'v-for',
                     name: 'V-for',
-                    component: Vfor
+                    component: Vfor,
+                    meta: {
+                        CName: '列表渲染'
+                    }
                 },
                 {
                     path: 'v-on',
                     name: 'V-on',
-                    component: Von
+                    component: Von,
+                    meta: {
+                        CName: '事件处理'
+                    }
                 },
                 {
                     path: 'v-model',
                     name: 'V-model',
-                    component: Vmodel
+                    component: Vmodel,
+                    meta: {
+                        CName: '表单输入绑定'
+                    }
                 },
                 {
                     path: 'components',
                     name: 'Components',
-                    component: Components
+                    component: Components,
+                    meta: {
+                        CName: '组件'
+                    }
                 },
                 {
                     path: 'transitions',
                     name: 'Transitions',
-                    component: Transitions
+                    component: Transitions,
+                    meta: {
+                        CName: '过渡效果'
+                    }
                 },
                 {
                     path: 'prop',
                     name: 'Prop',
-                    component: Prop
+                    component: Prop,
+                    meta: {
+                        CName: '属性'
+                    }
                 },
                 {
                     path: 'events',
                     name: 'Events',
-                    component: Events
+                    component: Events,
+                    meta: {
+                        CName: '自定义事件'
+                    }
                 },
                 {
                     path: 'slot',
                     name: 'Slot',
-                    component: Slot
+                    component: Slot,
+                    meta: {
+                        CName: '插槽'
+                    }
                 },
                 {
                     path: 'dynamic',
                     name: 'Dynamic',
-                    component: Dynamic
+                    component: Dynamic,
+                    meta: {
+                        CName: '动态组件'
+                    }
                 }
             ]
         },
@@ -137,6 +186,9 @@ let router = new Router({
             path: '/r',
             name: 'RouterIndex',
             component: R,
+            meta: {
+                CName: '路由'
+            },
             children: [
                 {
                     path: '',
@@ -144,6 +196,9 @@ let router = new Router({
                     components: {
                         default: GuildDefault,
                         left: GuildLeft
+                    },
+                    meta: {
+                        CName: '简介'
                     },
                     beforeEnter (to, from, next) {
                         console.log('beforeEnter', to)
@@ -156,70 +211,117 @@ let router = new Router({
         {
             path: '/x',
             name: 'XIndex',
-            component: X
+            component: X,
+            meta: {
+                CName: '状态管理器'
+            }
         },
         // elementUI
         {
             path: '/elementui',
             name: 'Elementui',
-            component: Elementui
+            component: Elementui,
+            meta: {
+                CName: 'ElementUI'
+            }
         },
         {
             path: '/film',
             name: 'Film',
-            component: Film
+            component: Film,
+            meta: {
+                CName: '影片管理'
+            }
         },
         {
             path: '/radio',
             name: 'FormRadio',
-            component: FormRadio
+            component: FormRadio,
+            meta: {
+                CName: '单选框'
+            }
         },
         {
             path: '/checkbox',
             name: 'FormCheckbox',
-            component: FormCheckbox
+            component: FormCheckbox,
+            meta: {
+                CName: '多选框'
+            }
         },
         {
             path: '/input',
             name: 'FormInput',
-            component: FormInput
+            component: FormInput,
+            meta: {
+                CName: '输入框'
+            }
         },
         {
             path: '/input-number',
             name: 'FormInputNumber',
-            component: FormInputNumber
+            component: FormInputNumber,
+            meta: {
+                CName: '计数器'
+            }
         },
         {
             path: '/select',
             name: 'FormSelect',
-            component: FormSelect
+            component: FormSelect,
+            meta: {
+                CName: '选择器'
+            }
         },
         // 工具箱
         {
             path: '/markdown',
             name: 'Markdown',
-            component: Markdown
+            component: Markdown,
+            meta: {
+                CName: 'Markdown'
+            }
         },
         {
             path: '/toollist',
             name: 'ToolList',
-            component: ToolList
+            component: ToolList,
+            meta: {
+                CName: 'TodoList'
+            }
         },
         {
             path: '/layout',
             name: 'Layout',
-            component: Layout
+            component: Layout,
+            meta: {
+                CName: '布局'
+            }
         },
         {
             path: '/animate',
             name: 'Animate',
-            component: Animate
+            component: Animate,
+            meta: {
+                CName: '动画'
+            }
         },
-        // 算法
+        // 算法, 数据结构, 设计模式
+        {
+            path: '/algorithm',
+            name: 'Algorithm',
+            component: Algorithm,
+            meta: {
+                CName: '算法'
+            }
+        },
         {
             path: '/structure',
             name: 'Structure',
-            component: Structure
+            component: Structure,
+            meta: {
+                CName: '数据结构'
+            }
         }
     ]
 })

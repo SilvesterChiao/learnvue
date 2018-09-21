@@ -81,7 +81,7 @@ export default {
     }
 }
 </script>
-<style>
+<style lang="scss">
 .slot-scope {
     background: linear-gradient(270deg, #0e6251, #28b463);
     display: flex;

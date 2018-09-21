@@ -37,7 +37,7 @@ export default {
         }
     },
     created () {
-        console.log('--------------List------------');
+        console.log('--------------List------------')
         let l = new List()
         l.append('西红柿')
         console.log(l.toString())

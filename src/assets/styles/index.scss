@@ -1,0 +1,143 @@
+// sass语法
+// 变量
+$blue: #1875e7;
+
+div {
+    color: $blue;
+}
+
+$side: left;
+
+.rounded {
+    border-#{$side}-radius: 5px;
+}
+
+// 计算
+body {
+    margin: (14px/2);
+    top: 50px + 100px;
+    right: $var * 10%;
+}
+
+// 嵌套
+div {
+    h1 {
+        color: red;
+    }
+}
+
+p {
+    border: {
+        color: red;
+    }
+}
+
+a {
+    &:hover {
+        color: #ffb3ff;
+    }
+}
+
+// sass注释
+/* css注释 */
+/*!
+    重要注释
+*/
+
+// 继承
+.class1 {
+    border: 1px solid #ddd;
+}
+
+.class2 {
+    @extend .class1;
+    font-size: 120%;
+}
+
+// 混合
+@mixin left {
+    float: left;
+    margin-left: 10px;
+}
+
+div.left {
+    @include left;
+}
+
+@mixin right($value: 10px) {
+    float: right;
+    margin-right: $value;
+}
+
+div.right {
+    @include right(20px);
+}
+
+@mixin rounded($vert, $horz, $radius: 10px) {
+    border-#{$vert}-#{$horz}-radius: $radius;
+    -moz-border-#{$vert}-#{$horz}-radius: $radius;
+    -webkit-border-#{$vert}-#{$horz}-radius: $radius;
+}
+
+#navbar li {
+    @include rounded(top, left);
+}
+
+#footer {
+    @include rounded(top, left, 5px);
+}
+
+// 颜色
+$lighten: lighten(#cc3, 10%);
+$darken: darken(#cc3, 10%);
+$grayscale: grayscale(#cc3);
+$complement: complement(#cc3);
+
+// 插入文件
+@import './path/filename.scss';
+
+// 条件语句
+p {
+    @if 1 + 1 == 2 {
+        border: 1px solid;
+    }
+    @if 5 < 3 {
+        border: 2px dotted;
+    }
+
+    @if lightness($color) > 30% {
+        background-color: #000;
+    } @else {
+        background-color: #fff;
+    }
+}
+
+// 循环语句
+@for $i from 1 to 10 {
+    .border-#{$i} {
+        border: #{$i}px solid blue;
+    }
+}
+
+$i: 6;
+@while $i > 0 {
+    .item-#{$i} {
+        width: 2em * $i;
+        $i: $i - 2;
+    }
+}
+
+@each $number in a, b, c, d {
+    .#{$number} {
+        background-image: url('/images#{$number}.jpg');
+    }
+}
+
+// 自定义函数
+@function double($n) {
+    @return $n * 2;
+}
+
+#sidebar {
+    width: double(5px);
+}

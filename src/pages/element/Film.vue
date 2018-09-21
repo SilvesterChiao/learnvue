@@ -1,8 +1,7 @@
 <template>
     <div class="hello">
         <div>
-            <h3>全部影片</h3>
-            <el-row>
+            <el-row class="filter-box">
                 <el-col :span="16">
                     类型:
                     <el-select v-model="sortFileType" placeholder="请选择" size="mini">
@@ -10,13 +9,13 @@
                         </el-option>
                     </el-select>
                 </el-col>
-                <el-col :span="4">
-                    <el-button type="primary" size="mini" @click="dialogVisible = true">添加</el-button>
+                <el-col :span="8">
+                    <el-button type="primary" size="mini" @click="dialogVisible = true" :style="{ float: 'right' }">添加</el-button>
                 </el-col>
             </el-row>
             <el-row>
                 <el-col :span="24">
-                    <el-table :data="films" style="width: 100%" :stripe="true" v-loading="false">
+                    <el-table :data="films" style="width: 100%" :stripe="true" v-loading="true" element-loading-text="拼命加载中" element-loading-spinner="el-icon-loading" element-loading-background="rgba(0, 0, 0, 0.8)">
                         <el-table-column prop="id" label="id" width="80"></el-table-column>
                         <el-table-column prop="name" label="影片名称" width="180"></el-table-column>
                         <el-table-column prop="title" label="标题" width="180"></el-table-column>
@@ -247,5 +246,9 @@ export default {
 <style scoped>
 .hello {
     height: 100%;
+}
+
+.filter-box {
+    margin-bottom: 16px;
 }
 </style>

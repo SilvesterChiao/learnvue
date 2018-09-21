@@ -18,7 +18,6 @@ import QueueDemo from './../../components/structure/QueueDemo'
 import DictionaryDemo from './../../components/structure/DictionaryDemo'
 import HashtableDemo from './../../components/structure/HashtableDemo'
 import TreeDemo from './../../components/structure/TreeDemo'
-import SortDemo from './../../components/structure/SortDemo'
 
 export default {
     data () {
@@ -48,10 +47,6 @@ export default {
                 {
                     tab: 'tree',
                     label: '树'
-                },
-                {
-                    tab: 'sort',
-                    label: '排序'
                 }
             ]
         }
@@ -69,8 +64,7 @@ export default {
         'tab-queue': QueueDemo,
         'tab-dictionary': DictionaryDemo,
         'tab-hashtable': HashtableDemo,
-        'tab-tree': TreeDemo,
-        'tab-sort': SortDemo
+        'tab-tree': TreeDemo
     },
     created () {
     }

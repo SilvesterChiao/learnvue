@@ -2,11 +2,6 @@
     <div id="app">
         <el-container>
             <el-aside class="sidebar" width="240px">
-                <el-row>
-                    <el-col :span="24">
-                        {{ $route.path }}
-                    </el-col>
-                </el-row>
                 <el-menu mode="vertical" default-active="1" class="el-menu-vertical-demo" router background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
                     <el-menu-item index="/">
                         <i class="fa fa-home"></i>
@@ -37,7 +32,7 @@
                                 介绍
                             </el-menu-item>
                             <el-menu-item index="/film">
-                                电影
+                                影片管理
                             </el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
@@ -64,6 +59,9 @@
                             <i class="el-icon-bell"></i>
                             <span>算法</span>
                         </template>
+                        <el-menu-item index="/algorithm">
+                            算法
+                        </el-menu-item>
                         <el-menu-item index="/structure">
                             数据结构
                         </el-menu-item>
@@ -76,17 +74,39 @@
             </el-aside>
             <el-container class="main">
                 <el-header class="header">
-                    <router-link to="/" class="logo">SilvesterChiao</router-link>
-                    <el-dropdown style="float: right; height: 60px; line-height: 60px;">
-                        <i class="el-icon-setting"></i>
+                    <img src="./assets/images/user_header.jpg" alt="header" style="width: 40px; height: 40px; border-radius: 50%;">
+                    <div style="flex: 1; height: 60px;"></div>
+                    <el-dropdown trigger="click">
+                        <span class="el-dropdown-link" style="color: #fff;">
+                            SilvesterChiao
+                            <i class="el-icon-caret-bottom"></i>
+                        </span>
                         <el-dropdown-menu slot="dropdown">
                             <el-dropdown-item>查看</el-dropdown-item>
                             <el-dropdown-item>新增</el-dropdown-item>
                             <el-dropdown-item>删除</el-dropdown-item>
+                            <el-dropdown-item>
+                                系统消息
+                                <el-badge :value="12" class="mark"></el-badge>
+                            </el-dropdown-item>
+                            <el-dropdown-item>退出</el-dropdown-item>
                         </el-dropdown-menu>
                     </el-dropdown>
+                    <el-badge is-dot class="item" style="margin: 0 10px;">
+                        <i class="el-icon-bell" style="font-size: 1.5em;"></i>
+                    </el-badge>
                 </el-header>
                 <el-main class="content">
+                    <el-row class="breadcrumb">
+                        <el-col :span="24">
+                            <el-breadcrumb separator="/">
+                                <template v-for="(item, index) in breadlist">
+                                    <el-breadcrumb-item :to="{ name: item.name }" v-if="index < breadlist.length" :key="index">{{ item.meta.CName }}</el-breadcrumb-item>
+                                    <el-breadcrumb-item :key="index" v-else>{{ item.meta.CName }}</el-breadcrumb-item>
+                                </template>
+                            </el-breadcrumb>
+                        </el-col>
+                    </el-row>
                     <!-- <img src="./assets/logo.png"> -->
                     <router-view></router-view>
                 </el-main>
@@ -103,12 +123,31 @@ export default {
     name: 'app',
     data () {
         return {
-            logined: false
+            logined: false,
+            breadlist: ''
         }
     },
     methods: {
         checkLogin () {
 
+        },
+        getBread () {
+            let breadlist = this.$route.matched
+            if (breadlist[0].meta.CName !== '首页') {
+                breadlist = [{
+                    path: '/',
+                    meta: {
+                        CName: '首页'
+                    }
+                }].concat(breadlist)
+            }
+
+            this.breadlist = breadlist
+        }
+    },
+    watch: {
+        $route () {
+            this.getBread()
         }
     },
     created () {
@@ -117,6 +156,7 @@ export default {
             message: '登陆成功',
             offset: 100
         })
+        this.getBread()
     }
 }
 </script>
@@ -196,6 +236,8 @@ body {
 }
 
 .header {
+    display: flex;
+    align-items: center;
     border-radius: 4px;
     background-color: #84c8b3;
 }
@@ -206,10 +248,17 @@ body {
     color: #545c64;
 }
 
+.mark {
+    float: right;
+    margin-top: 8px;
+    margin-left: 4px;
+    line-height: 1;
+}
+
 .content {
     overflow: auto;
     margin-top: 16px;
-    padding: 10px 16px;
+    padding: 20px 24px;
     height: calc(100% - 60px);
     border-radius: 4px;
     background-color: #fff;
@@ -217,6 +266,10 @@ body {
 
 .content::-webkit-scrollbar {
     display: none;
+}
+
+.breadcrumb {
+    margin-bottom: 16px;
 }
 
 .foot {

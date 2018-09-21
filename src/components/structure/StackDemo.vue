@@ -7,7 +7,7 @@
 import { Stack } from './../../assets/scripts/structure/Stack'
 export default {
     created () {
-        console.log('---------------Stack---------------');
+        console.log('---------------Stack---------------')
         let s = new Stack()
         let stars = [
             '金星',
