@@ -41,4 +41,8 @@ var template = {
 
 var data = Mock.mock(template)
 
+let Film = function () {
+    this.data = data
+}
+
 export { data }

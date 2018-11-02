@@ -5,29 +5,34 @@
                 <el-col :span="16">
                     类型:
                     <el-select v-model="sortFileType" placeholder="请选择" size="mini">
-                        <el-option v-for="(item, index) in typelist" :key="index" :label="item" :value="index">
+                        <el-option v-for="(item, index) in typelist" :key="index" :label="item" :value="item">
                         </el-option>
                     </el-select>
                 </el-col>
                 <el-col :span="8">
-                    <el-button type="primary" size="mini" @click="dialogVisible = true" :style="{ float: 'right' }">添加</el-button>
+                    <el-button type="primary" size="mini" @click="addFilmVisible = true" :style="{ float: 'right' }">添加</el-button>
                 </el-col>
             </el-row>
             <el-row>
                 <el-col :span="24">
-                    <el-table :data="films" style="width: 100%" :stripe="true" v-loading="true" element-loading-text="拼命加载中" element-loading-spinner="el-icon-loading" element-loading-background="rgba(0, 0, 0, 0.8)">
-                        <el-table-column prop="id" label="id" width="80"></el-table-column>
-                        <el-table-column prop="name" label="影片名称" width="180"></el-table-column>
-                        <el-table-column prop="title" label="标题" width="180"></el-table-column>
-                        <el-table-column prop="image" label="图片地址" width="240"></el-table-column>
-                        <el-table-column prop="type" label="影片类型" width="180"></el-table-column>
-                        <el-table-column prop="hot" label="热门"></el-table-column>
-                        <el-table-column label="操作" width="100">
+                    <el-table :data="films" style="width: 100%" :stripe="true" v-loading="filmLoading" element-loading-text="拼命加载中" element-loading-spinner="el-icon-loading" element-loading-background="rgba(0, 0, 0, 0.8)">
+                        <el-table-column prop="id" label="id" header-align="center" align="center" width="80"></el-table-column>
+                        <el-table-column prop="name" label="影片名称" header-align="center" align="center" width="180"></el-table-column>
+                        <el-table-column prop="title" label="标题" header-align="center" align="center" width="180"></el-table-column>
+                        <el-table-column prop="image" label="图片地址" header-align="center" align="center"></el-table-column>
+                        <el-table-column prop="type" label="影片类型" header-align="center" align="center" width="180"></el-table-column>
+                        <el-table-column prop="hot" label="热门" header-align="center" align="center" width="100">
                             <template slot-scope="scope">
-                                <el-button @click.native.prevent="open2(scope.$index, films)" type="text" size="small">
+                                <el-tag v-if="scope.row.hot" size="small">是</el-tag>
+                                <el-tag v-else size="small">否</el-tag>
+                            </template>
+                        </el-table-column>
+                        <el-table-column label="操作" header-align="center" align="center" width="100">
+                            <template slot-scope="scope">
+                                <el-button @click.native.prevent="open2(scope.$index, data.film)" type="text" size="small">
                                     移除
                                 </el-button>
-                                <el-button type="text" size="small" @click="showEditFilm(scope.row.id)">
+                                <el-button type="text" size="small" @click="showEditFilm(scope.$index, scope.row)">
                                     编辑
                                 </el-button>
                             </template>
@@ -38,7 +43,10 @@
         </div>
         <el-dialog title="编辑" :visible.sync="editFilmVisible" width="30%" :before-close="handleClose">
             <div>
-                <el-form ref="form" :mode="film" label-width="80px">
+                <el-form ref="edit-form" :mode="film" label-width="80px">
+                    <el-form-item label="影片ID">
+                        <el-input v-model="film.id" disabled></el-input>
+                    </el-form-item>
                     <el-form-item label="影片名称">
                         <el-input v-model="film.name"></el-input>
                     </el-form-item>
@@ -58,14 +66,32 @@
             </div>
             <span slot="footer" class="dialog-footer">
                 <el-button type="primary" @click="editFilmVisible = false">取 消</el-button>
-                <el-button type="primary" @click="onSubmit">确 定</el-button>
+                <el-button type="primary" @click="editFilm">确 定</el-button>
             </span>
         </el-dialog>
-        <el-dialog title="提示" :visible.sync="dialogVisible" width="30%" :before-close="handleClose">
-            <span>这是一段信息</span>
+        <el-dialog title="添加" :visible.sync="addFilmVisible" width="30%" :before-close="handleClose">
+            <div>
+                <el-form ref="add-form" :mode="newFilm" label-width="80px">
+                    <el-form-item label="影片名称">
+                        <el-input v-model="newFilm.name"></el-input>
+                    </el-form-item>
+                    <el-form-item label="标题">
+                        <el-input v-model="newFilm.title"></el-input>
+                    </el-form-item>
+                    <el-form-item label="是否热门">
+                        <el-switch active-text="是" inactive-text="否" v-model="newFilm.hot"></el-switch>
+                    </el-form-item>
+                    <el-form-item label="影片类型">
+                        <el-select v-model="newFilm.type" placeholder="请选择" size="mini">
+                            <el-option v-for="(item, index) in typelist" :key="index" :label="item" :value="item">
+                            </el-option>
+                        </el-select>
+                    </el-form-item>
+                </el-form>
+            </div>
             <span slot="footer" class="dialog-footer">
-                <el-button @click="dialogVisible = false">取 消</el-button>
-                <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+                <el-button type="primary" @click="addFilmVisible = false">取 消</el-button>
+                <el-button type="primary" @click="addFilm">确 定</el-button>
             </span>
         </el-dialog>
     </div>
@@ -84,6 +110,7 @@ export default {
         let msg = 'Welcome to Your Vue.js App'
         return {
             data,
+            filmLoading: false,
             msg: msg,
             user: [
                 {
@@ -94,6 +121,7 @@ export default {
                 }
             ],
             typelist: [
+                '全部',
                 '喜剧',
                 '悲剧',
                 '爱情',
@@ -165,21 +193,21 @@ export default {
                 image: '',
                 hot: false
             },
-            dialogVisible: false,
+            addFilmVisible: false,
             editFilmVisible: false,
-            sortFileType: ''
+            sortFileType: '全部'
         }
     },
     computed: {
         films () {
-            return this.data.film.map(item => {
-                if (item.hot) {
-                    item.hot = '是'
+            this.filmLoading = true
+            this.filmLoading = false
+            return this.data.film.filter(item => {
+                if (this.sortFileType === '全部') {
+                    return true
                 } else {
-                    item.hot = '否'
+                    return item.type === this.sortFileType
                 }
-
-                return item
             })
         }
     },
@@ -217,15 +245,25 @@ export default {
             })
         },
         addFilm: function () {
-            console.log('增加条目')
+            this.addFilmVisible = false
+            this.data.film.push(this.newFilm)
         },
-        showEditFilm (index) {
+        showEditFilm (index, film) {
             this.editFilmVisible = true
             this.editFilmIndex = index
+            this.film = {
+                id: film.id,
+                name: film.name,
+                title: film.title,
+                image: film.image,
+                type: film.type,
+                hot: film.hot
+            }
         },
-        onSubmit: function () {
+        editFilm: function () {
             this.editFilmVisible = false
-            this.$set(this.data.film, this.editFilmIndex - 1, this.film)
+            this.$set(this.data.film, this.editFilmIndex, this.film)
+            console.log(this.films)
         },
         handleClose (done) {
             done()
@@ -237,7 +275,7 @@ export default {
         }
     },
     created () {
-        console.log(this.data);
+        console.log(this.data)
     }
 }
 
