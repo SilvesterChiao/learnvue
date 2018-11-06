@@ -28,13 +28,8 @@ import GuildLeft from '@/pages/r/GuildLeft'
 import X from '@/pages/x/Index'
 
 // ElementUI
-import Elementui from '@/pages/element/introduce'
+import Elementui from '@/pages/element/Introduce'
 import Film from '@/pages/element/Film'
-import FormRadio from '@/pages/element/FormRadio'
-import FormCheckbox from '@/pages/element/FormCheckbox'
-import FormInput from '@/pages/element/FormInput'
-import FormInputNumber from '@/pages/element/FormInputNumber'
-import FormSelect from '@/pages/element/FormSelect'
 
 // 工具箱
 import Markdown from '@/pages/toolbox/Markdown'
@@ -231,46 +226,6 @@ let router = new Router({
             component: Film,
             meta: {
                 CName: '影片管理'
-            }
-        },
-        {
-            path: '/radio',
-            name: 'FormRadio',
-            component: FormRadio,
-            meta: {
-                CName: '单选框'
-            }
-        },
-        {
-            path: '/checkbox',
-            name: 'FormCheckbox',
-            component: FormCheckbox,
-            meta: {
-                CName: '多选框'
-            }
-        },
-        {
-            path: '/input',
-            name: 'FormInput',
-            component: FormInput,
-            meta: {
-                CName: '输入框'
-            }
-        },
-        {
-            path: '/input-number',
-            name: 'FormInputNumber',
-            component: FormInputNumber,
-            meta: {
-                CName: '计数器'
-            }
-        },
-        {
-            path: '/select',
-            name: 'FormSelect',
-            component: FormSelect,
-            meta: {
-                CName: '选择器'
             }
         },
         // 工具箱

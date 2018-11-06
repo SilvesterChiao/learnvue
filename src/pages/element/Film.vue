@@ -99,10 +99,10 @@
 
 <script>
 import { data } from './../../assets/scripts/data/film.js'
-import img1 from '../../assets/images/movie_1.jpg'
-import img2 from '../../assets/images/movie_2.jpg'
-import img3 from '../../assets/images/movie_3.jpg'
-import img4 from '../../assets/images/movie_4.jpg'
+// import img1 from '../../assets/images/movie_1.jpg'
+// import img2 from '../../assets/images/movie_2.jpg'
+// import img3 from '../../assets/images/movie_3.jpg'
+// import img4 from '../../assets/images/movie_4.jpg'
 
 export default {
     name: 'hello',
