@@ -18,8 +18,10 @@ a[mySymbol] = 'Hello'
 
 // 2
 var b = {
-  [mySymbol]: 'Hello'
+    [mySymbol]: 'Hello'
 }
+
+console.log(b)
 
 // 3
 var c = {}

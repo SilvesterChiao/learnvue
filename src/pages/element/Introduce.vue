@@ -6,6 +6,11 @@
         <!-- Form -->
         <!-- Data -->
         <!-- Notice -->
+        <notice-alert></notice-alert>
+        <notice-loading></notice-loading>
+        <notice-message></notice-message>
+        <notice-message-box></notice-message-box>
+        <notice-notification></notice-notification>
         <!-- Navigation -->
         <!-- Others -->
         <others-tooltip></others-tooltip>
@@ -19,6 +24,12 @@
 // Basic
 import BasicLayout from './basic/BasicLayout'
 import BasicButton from './basic/BasicButton'
+// Notice
+import NoticeAlert from './notice/NoticeAlert'
+import NoticeLoading from './notice/NoticeLoading'
+import NoticeMessage from './notice/NoticeMessage'
+import NoticeMessageBox from './notice/NoticeMessageBox'
+import NoticeNotification from './notice/NoticeNotification'
 // Others
 import OthersTooltip from './others/OthersTooltip'
 import OthersCard from './others/OthersCard'
@@ -38,6 +49,11 @@ export default {
     components: {
         BasicLayout,
         BasicButton,
+        NoticeAlert,
+        NoticeLoading,
+        NoticeMessage,
+        NoticeMessageBox,
+        NoticeNotification,
         OthersTooltip,
         OthersCard,
         OthersCarousel,

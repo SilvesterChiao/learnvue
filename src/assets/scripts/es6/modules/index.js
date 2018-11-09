@@ -1,6 +1,13 @@
 // import
 // 写法一
-import { firstName, lastName, year } from './person.js'
+import {
+    firstName,
+    lastName,
+    year,
+    length as l,
+    width as w,
+    height as h
+} from './person.js'
 let person = {
     firstName,
     lastName,
@@ -9,5 +16,4 @@ let person = {
 export { person }
 
 // 写法二
-import { length as l, width as w, height as h } from './person.js'
 export var volume = l * w * h
