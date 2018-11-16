@@ -8,6 +8,7 @@ import {
     width as w,
     height as h
 } from './person.js'
+
 let person = {
     firstName,
     lastName,
