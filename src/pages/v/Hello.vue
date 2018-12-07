@@ -77,11 +77,32 @@ export default {
             }).catch(err => {
                 console.log(err)
             })
+        },
+        getMovies () {
+            this.axios({
+                url: '/api/user',
+                method: 'POST'
+            }).then(res => {
+                console.log(res)
+            }).catch(err => {
+                console.log(err)
+            })
+        },
+        getUserInfo () {
+            this.axios({
+                url: '/api/users/getUserInfo',
+                method: 'GET'
+            }).then(res => {
+                console.log(res)
+            }).catch(err => {
+                console.log(err)
+            })
         }
     },
     created () {
-        // this.getUser();
-        this.getInfo()
+        this.getMovies()
+        this.getUserInfo()
+        // this.getInfo()
         var black = new Dog()
         black.say('你好我叫小黑')
 

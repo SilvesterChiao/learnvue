@@ -2,14 +2,12 @@
     <div>
         <el-row>
             <el-col :span="24">
-                <span v-for="(star, index) in stars" :key="index">
-                    {{ star }}
-                </span>
+                <span v-for="(star, index) in stars" :key="index">{{ star }}</span>
             </el-col>
         </el-row>
-        <input type="text" placeholder="请输入项目" v-model="newStar">
-        <button @click="addStar">添加</button>
-        <button @click="deleteStar">删除</button>
+        <el-input type="text" placeholder="请输入项目" v-model="newStar"></el-input>
+        <el-button @click="addStar">添加</el-button>
+        <el-button @click="deleteStar">删除</el-button>
     </div>
 </template>
 <script>

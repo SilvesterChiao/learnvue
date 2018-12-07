@@ -87,7 +87,6 @@ export default {
         'blog-post': Child
     },
     created () {
-        console.log(this.axios)
     }
 }
 </script>

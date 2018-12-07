@@ -1,15 +1,13 @@
 <template>
-    <div>
-        queue-demo
-    </div>
+    <div>queue-demo</div>
 </template>
 <script>
 import { Queue } from './../../assets/scripts/structure/Queue'
 export default {
-    created () {
+    created() {
         console.log('---------------Queue----------------');
-        let q = new Queue()
-        q.enqueue('流刃若火')
+        let q = new Queue();
+        q.enqueue('流刃若火');
         q.enqueue('雀峰')
         q.enqueue('神枪')
         q.enqueue('肉雫唼')

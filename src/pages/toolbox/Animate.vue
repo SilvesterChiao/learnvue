@@ -62,7 +62,7 @@ export default {
     },
     methods: {
         animateIt () {
-            console.log('OK');
+            console.log('OK')
         }
     },
     created () {
