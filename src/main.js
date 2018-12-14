@@ -26,6 +26,10 @@ Vue.directive('focus', {
     }
 })
 
+Vue.component('component-main', {
+    template: '<div>component-main</div>'
+})
+
 /* eslint-disable no-new */
 new Vue({
     el: '#app',

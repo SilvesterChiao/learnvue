@@ -7,6 +7,7 @@
             <my-component message="hello" v-on:increment="incrementTotal"></my-component>
             <my-component message="message" v-on:increment="incrementTotal"></my-component>
             <my-component message="fuck" v-on:increment="incrementTotal"></my-component>
+            <component-main></component-main>
         </div>
     </div>
 </template>
