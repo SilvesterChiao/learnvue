@@ -7,7 +7,7 @@
                 <h5>文本</h5>
                 <input type="text" v-model="msg">
                 <p>
-                    这里是通过 {{ }} 绑定的，会随着data变化 {{ msg }}</p>
+                    这里是通过 {{ tmpl }} 绑定的，会随着data变化 {{ msg }}</p>
                 <p v-once>
                     这里是通过 v-once 绑定的，不会变的 {{ msg }}
                 </p>
@@ -43,6 +43,7 @@ export default {
     name: 'v-template',
     data () {
         return {
+            tmpl: '{{  }}',
             msg: '模板语法',
             rawHtml: '<span style="color: red;">html</span>',
             question: '',

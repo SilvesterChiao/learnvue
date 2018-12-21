@@ -6,7 +6,7 @@
 
 // 1.默认参数
 function log (x, y = 'world') {
-  console.log(x, y)
+    console.log(x, y)
 }
 // 2.rest参数
 // 3.扩展运算符

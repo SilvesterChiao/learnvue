@@ -86,6 +86,8 @@ export default {
                 console.log(res)
             }).catch(err => {
                 console.log(err)
+            }).finally(() => {
+                console.log('finally')
             })
         },
         getUserInfo () {

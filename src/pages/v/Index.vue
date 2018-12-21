@@ -18,8 +18,13 @@
                     <router-link to="/v/slot">插槽</router-link>
                     <router-link to="/v/dynamic">动态组件</router-link>
                     <router-link to="/v/transitions">过渡效果</router-link>
+                    <router-link to="/v/mixin">混入</router-link>
                 </li>
             </ul>
+        </div>
+        <div>
+            <h3>苹果: {{ appleCount }}个</h3>
+            <button @click="addAppleCount()">click</button>
         </div>
         <!-- <div>
             <h3>声明式渲染</h3>
@@ -93,6 +98,8 @@
 
 <script>
 import banner from '../../components/banner'
+import addApple from '../../assets/scripts/es6/promise.js'
+
 export default {
     name: 'VueIndex',
     data () {
@@ -130,7 +137,8 @@ export default {
                 name: '李雷',
                 age: 15
             },
-            user: []
+            user: [],
+            appleCount: 0
         }
     },
     computed: {
@@ -150,6 +158,19 @@ export default {
         },
         alertClose () {
             console.log('alert close')
+        },
+        addAppleCount (number = 1) {
+            addApple(true).then(() => {
+                console.log(number)
+                this.appleCount += 1
+            }).catch(() => {
+                this.$message.error('error')
+            })
+            // addApple(number).then(res => {
+            //     this.$message('苹果增加' + number + '个')
+            // }).catch(err => {
+            //     this.$message.error(err)
+            // })
         }
     },
     components: {

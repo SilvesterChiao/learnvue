@@ -12,6 +12,17 @@
     </div>
 </template>
 <script>
+/**
+ * Options:
+ * target: Object/String
+ * body: Boolean
+ * fullscreen: Boolean
+ * lock: Boolean
+ * text: String
+ * sponner: String
+ * background: String
+ * customClass: String
+ */
 export default {
     data () {
         return {
@@ -41,5 +52,5 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import '~styles/el-demo-item.scss';
+@import "~styles/el-demo-item.scss";
 </style>

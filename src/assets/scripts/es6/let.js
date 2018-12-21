@@ -2,7 +2,7 @@
  * title: let, const
  * date: 2017/12/07
  * author: Silvester
-*/
+ */
 
 // es6声明变量: var, function, let, const, import, class
 // let
@@ -21,7 +21,7 @@ console.log('b : ' + b)
 
 var total = 0
 for (let i = 0; i < 10; i++) {
-  total += i
+    total += i
 }
 
 console.log('0 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 = ' + total)

@@ -22,11 +22,15 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.vue', '.json'],
         alias: {
+            // src, 图片, 脚本, 样式, 组件, 混入, 工具
             vue$: 'vue/dist/vue.esm.js',
             '@': resolve('src'),
             images: path.resolve(__dirname, '../src/assets/images'),
             scripts: path.resolve(__dirname, '../src/assets/scripts'),
-            styles: path.resolve(__dirname, '../src/assets/styles')
+            styles: path.resolve(__dirname, '../src/assets/styles'),
+            components: path.resolve(__dirname, '../src/components'),
+            mixins: path.resolve(__dirname, '../src/mixins'),
+            utils: path.resolve(__dirname, '../src/utils')
         }
     },
     module: {

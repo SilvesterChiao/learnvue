@@ -12,6 +12,20 @@
     </div>
 </template>
 <script>
+/**
+ * Options:
+ * message: String/VNode
+ * type: String
+ * iconClass: String
+ * dangerouslyUseHTMLString: Boolean
+ * customClass: String
+ * duration: Number
+ * showClose: Boolean
+ * center: Boolean
+ * onClose: Function
+ * Methods:
+ * close
+ */
 export default {
     methods: {
         open () {
@@ -48,5 +62,5 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import '~styles/el-demo-item.scss';
+@import "~styles/el-demo-item.scss";
 </style>

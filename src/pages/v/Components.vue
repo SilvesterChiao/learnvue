@@ -13,6 +13,8 @@
 </template>
 
 <script>
+// import的方式与此相同
+// import Child from './Child.vue'
 var Child = {
     props: ['message'],
     template: '<div>这里是子组件{{ message }}<button v-on:click="incrementTotal">{{ counter }}</button></div>',

@@ -18,6 +18,7 @@ import Events from '@/pages/v/Events'
 import Slot from '@/pages/v/Slot'
 import Dynamic from '@/pages/v/Dynamic'
 import Transitions from '@/pages/v/Transitions'
+import Mixin from '@/pages/v/Mixin'
 
 // vue-router教程
 import R from '@/pages/r/Index'
@@ -135,14 +136,6 @@ let router = new Router({
                     }
                 },
                 {
-                    path: 'transitions',
-                    name: 'Transitions',
-                    component: Transitions,
-                    meta: {
-                        CName: '过渡效果'
-                    }
-                },
-                {
                     path: 'prop',
                     name: 'Prop',
                     component: Prop,
@@ -172,6 +165,22 @@ let router = new Router({
                     component: Dynamic,
                     meta: {
                         CName: '动态组件'
+                    }
+                },
+                {
+                    path: 'transitions',
+                    name: 'Transitions',
+                    component: Transitions,
+                    meta: {
+                        CName: '过渡效果'
+                    }
+                },
+                {
+                    path: 'mixin',
+                    name: 'Mixin',
+                    component: Mixin,
+                    meta: {
+                        CName: '混入'
                     }
                 }
             ]
