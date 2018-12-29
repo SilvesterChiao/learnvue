@@ -7,11 +7,14 @@
                 <el-button type="primary" @click="openVn">VNode</el-button>
                 <el-button type="primary" @click="open3">提示</el-button>
                 <el-button type="primary" @click="open4">提示</el-button>
+                <el-button type="primary" @click="closeMessage">关闭</el-button>
+                <el-button type="primary" @click="closeAllMessage">全部关闭</el-button>
             </el-button-group>
         </div>
     </div>
 </template>
 <script>
+// 发送反馈信息
 /**
  * Options:
  * message: String/VNode
@@ -26,10 +29,15 @@
  * Methods:
  * close
  */
+
+// Message.info, Message.success, Message.warning, Message.error, Message.closeAll
+import { Message } from 'element-ui'
+
 export default {
     methods: {
         open () {
             this.$message('这是一条消息提示')
+            console.log(this.$ELEMEMT)
         },
         openVn () {
             const h = this.$createElement
@@ -41,7 +49,7 @@ export default {
             })
         },
         open3 () {
-            this.$message.success({
+            this.message = this.$message.success({
                 message: '操作成功',
                 showClose: true,
                 duration: 0
@@ -52,11 +60,17 @@ export default {
                 type: 'warning',
                 message: 'FBI Warning',
                 center: true,
-                duration: 1000,
+                duration: 0,
                 onClose () {
-                    console.log('close')
+                    console.log('message4 close')
                 }
             })
+        },
+        closeMessage () {
+            this.message.close()
+        },
+        closeAllMessage () {
+            Message.closeAll()
         }
     }
 }

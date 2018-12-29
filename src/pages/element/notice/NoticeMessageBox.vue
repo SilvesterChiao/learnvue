@@ -11,6 +11,37 @@
     </div>
 </template>
 <script>
+/**
+ * Attributes:
+ * title: String
+ * message: String/VNode
+ * dangerouslyUseHTMLString: Boolean
+ * type: success/info/warning/error
+ * customClass: String
+ * callback: function(action, instance)
+ * showClose: Boolean
+ * beforeClose: function(action, instance, done)
+ * lockScroll: Boolean
+ * showCancelButton: Boolean
+ * showConfirmButton: Boolean
+ * cancelButtonText: String
+ * confirmButtonText: String
+ * cancelButtonClass: String
+ * confirmButtonClass: String
+ * closeOnClickModal: Boolean
+ * closeOnPressEscape: Boolean
+ * closeOnHashChange: Boolean
+ * showInput: Boolean
+ * inputPlaceholder: String
+ * inputType: String
+ * inputValue: String
+ * inputPattern: Regexp
+ * inputValidator: function
+ * inputErrorMessage: String
+ * center: Boolean
+ * roundButton: Boolean
+ */
+// MessageBox, MessageBox.alert, MessageBox.confirm, MessageBox.prompt
 export default {
     methods: {
         open () {
@@ -65,5 +96,5 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import '~styles/el-demo-item.scss';
+@import "~styles/el-demo-item.scss";
 </style>

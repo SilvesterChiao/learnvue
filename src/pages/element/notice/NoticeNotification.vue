@@ -1,30 +1,52 @@
 <template>
     <div class="elementui-demo-item">
         <h3>Notification 通知</h3>
-        <div>
-            <el-button-group>
-                <el-button type="primary" @click="open">发送</el-button>
-                <el-button type="primary" @click="open2">发送</el-button>
-                <el-button type="primary" @click="open3">发送</el-button>
-                <el-button type="primary" @click="open4">发送</el-button>
-                <el-button type="primary" @click="close">关闭</el-button>
-            </el-button-group>
-        </div>
+        <el-row>
+            <el-col :span="12">
+                <el-button-group>
+                    <el-button type="primary" @click="open1">发送</el-button>
+                    <el-button type="primary" @click="open2">发送</el-button>
+                    <el-button type="primary" @click="open3">发送</el-button>
+                    <el-button type="primary" @click="open4">发送</el-button>
+                    <el-button type="primary" @click="close1">关闭</el-button>
+                </el-button-group>
+            </el-col>
+            <el-col :span="12">
+                <el-button-group>
+                    <el-button type="primary" @click="open5">登录</el-button>
+                    <el-button type="primary" @click="open6">取消</el-button>
+                    <el-button type="primary" @click="open7">退出</el-button>
+                    <el-button type="primary" @click="open8">注册</el-button>
+                    <el-button type="primary" @click="close2">关闭</el-button>
+                </el-button-group>
+            </el-col>
+        </el-row>
     </div>
 </template>
 <script>
+// 发送系统级消息
+/**
+ * Options:
+ * title: String
+ * message: String/VNode
+ * dangerouslyUseHTMLString: Boolean
+ * type: String
+ * iconClass: String
+ * customClass: String
+ * duration: Number
+ * position: top-left/top-right/bottom-right/bottom-left
+ * showClose: Boolean
+ * onClose: Function
+ * onClick: Function
+ * offset: Number
+ * Methods:
+ * close:
+ */
+
+// Notification.info, Notification.success, Notification.warning, Notification.error
 export default {
     methods: {
-        close () {
-            this.instance.close()
-        },
-        handleClose () {
-            console.log('关闭')
-        },
-        handleClick () {
-            console.log('点击')
-        },
-        open () {
+        open1 () {
             const h = this.$createElement
 
             this.$notify({
@@ -63,10 +85,46 @@ export default {
                 message: '通信错误',
                 position: 'bottom-right'
             })
+        },
+        close1 () {
+            this.instance.close()
+        },
+        open5 () {
+            let vm = this
+            vm.noficeLogin = vm.$notify({
+                type: 'success',
+                title: '登录成功',
+                message: '欢迎光临!',
+                customClass: 'login-notify-class',
+                duration: 0,
+                position: 'top-right',
+                showClose: false,
+                offset: 30,
+                onClose: function () {
+                    vm.$message('关闭了nitify')
+                },
+                onClick: function () {
+                    vm.noficeLogin.close()
+                }
+            })
+        },
+        open6 () {
+            this.$notify({
+                type: 'warning',
+                title: '取消登录',
+                message: '<i>大爷以后常来啊</i>',
+                dangerouslyUseHTMLString: true,
+                duration: 2000
+            })
+        },
+        open7 () { },
+        open8 () { },
+        close2 () {
+            this.noficeLogin.close()
         }
     }
 }
 </script>
 <style lang="scss" scoped>
-@import '~styles/el-demo-item.scss';
+@import "~styles/el-demo-item.scss";
 </style>

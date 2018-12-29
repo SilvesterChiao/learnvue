@@ -13,7 +13,7 @@
 </template>
 <script>
 /**
- * Options:
+ * Attributes:
  * title: String
  * type: success/warning/info/error
  * description: String
@@ -22,7 +22,7 @@
  * close-text: String
  * show-icon: Boolean
  * Events:
- * close: Function
+ * close
  */
 export default {
     methods: {

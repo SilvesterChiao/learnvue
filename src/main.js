@@ -12,7 +12,7 @@ import store from './store/index'
 import axios from 'axios'
 
 Vue.config.productionTip = false
-Vue.use(ElementUI)
+Vue.use(ElementUI, { size: 'small' })
 Vue.use(animate)
 
 Vue.prototype.axios = axios

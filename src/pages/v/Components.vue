@@ -4,10 +4,12 @@
         <div>
             <h3>组件</h3>
             <p>{{ total }}</p>
-            <my-component message="hello" v-on:increment="incrementTotal"></my-component>
+            <el-button type="primary" @click="initComent">初始化</el-button>
+            <my-component message="hello" v-on:increment="incrementTotal" ref="com1"></my-component>
             <my-component message="message" v-on:increment="incrementTotal"></my-component>
             <my-component message="fuck" v-on:increment="incrementTotal"></my-component>
             <component-main></component-main>
+            <el-button type="primary" @click="sendNotify">发送notify</el-button>
         </div>
     </div>
 </template>
@@ -24,6 +26,9 @@ var Child = {
         }
     },
     methods: {
+        init () {
+            console.log('init')
+        },
         incrementTotal: function () {
             this.counter += 1
             this.$emit('increment')
@@ -32,7 +37,7 @@ var Child = {
 }
 
 export default {
-    name: 'component',
+    name: 'components',
     data () {
         return {
             msg: 'component',
@@ -40,8 +45,18 @@ export default {
         }
     },
     methods: {
+        initComent () {
+            this.$refs.com1.init()
+        },
         incrementTotal: function () {
             this.total += 1
+        },
+        sendNotify () {
+            this.$notify({
+                type: 'info',
+                title: '发送nofify',
+                duration: 3000
+            })
         }
     },
     components: {
