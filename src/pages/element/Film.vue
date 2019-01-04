@@ -1,5 +1,5 @@
 <template>
-    <div class="hello">
+    <div class="hello" style="flex: 1;">
         <div>
             <el-row class="filter-box">
                 <el-col :span="16">

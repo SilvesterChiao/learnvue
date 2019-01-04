@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="flex: 1;">
         <div class="template">
             <h1>模板语法</h1>
             <div>

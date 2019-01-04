@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="flex: 1;">
         <h3>过渡效果</h3>
         <el-button @click="fade = !fade" size="small">
             toggle

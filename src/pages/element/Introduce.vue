@@ -1,5 +1,5 @@
 <template>
-    <div class="elementui-demo">
+    <div class="elementui-demo" style="flex: 1;">
         <!-- Basic -->
         <basic-layout></basic-layout>
         <basic-button></basic-button>
@@ -13,7 +13,9 @@
         <notice-notification></notice-notification>
         <!-- Navigation -->
         <!-- Others -->
+        <others-dialog></others-dialog>
         <others-tooltip></others-tooltip>
+        <others-popover></others-popover>
         <others-card></others-card>
         <others-carousel></others-carousel>
         <others-collapse></others-collapse>
@@ -31,7 +33,9 @@ import NoticeMessage from './notice/NoticeMessage'
 import NoticeMessageBox from './notice/NoticeMessageBox'
 import NoticeNotification from './notice/NoticeNotification'
 // Others
+import OthersDialog from './others/OthersDialog'
 import OthersTooltip from './others/OthersTooltip'
+import OthersPopover from './others/OthersPopover'
 import OthersCard from './others/OthersCard'
 import OthersCarousel from './others/OthersCarousel'
 import OthersCollapse from './others/OthersCollapse'
@@ -54,7 +58,9 @@ export default {
         NoticeMessage,
         NoticeMessageBox,
         NoticeNotification,
+        OthersDialog,
         OthersTooltip,
+        OthersPopover,
         OthersCard,
         OthersCarousel,
         OthersCollapse
@@ -64,5 +70,5 @@ export default {
 </script>
 
 <style lang="scss" scope>
-@import '~styles/elementui.scss';
+@import "~styles/elementui.scss";
 </style>

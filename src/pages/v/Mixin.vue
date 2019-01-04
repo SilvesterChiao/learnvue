@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="flex: 1;">
         <h3>mixin</h3>
     </div>
 </template>

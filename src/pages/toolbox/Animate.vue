@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="flex: 1;">
         <h3>animate.css用法</h3>
         <el-row>
             <el-col :span="8" :offset="80" class="animate-demo animated" :class="[currentType, currentDelay, currentSpeed, currentInfinite]">

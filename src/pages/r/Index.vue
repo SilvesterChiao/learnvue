@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="flex: 1;">
         <h1>vue-router基础</h1>
         <div>
             <h3>安装</h3>

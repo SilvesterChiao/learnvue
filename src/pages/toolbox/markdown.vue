@@ -1,5 +1,5 @@
 <template>
-    <div id="editor">
+    <div id="editor" style="flex: 1;">
         <textarea :value="input" @input="update"></textarea>
         <div class="markdown-box" v-html="compiledMarkdown"></div>
     </div>
@@ -26,20 +26,19 @@ export default {
     }
 }
 </script>
-<style>
+<style scoped>
 #editor {
-    margin: 0;
-    height: 100%;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    color: #333;
     display: flex;
+    flex: 1;
+    margin: 0;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    color: #333;
 }
 
 textarea,
 #editor div {
     display: inline-block;
     width: 50%;
-    height: 100%;
     vertical-align: top;
     box-sizing: border-box;
     padding: 20px;
@@ -52,7 +51,7 @@ textarea {
     border: none;
     border-right: 1px solid #ccc;
     font-size: 14px;
-    font-family: 'Monaco', courier, monospace;
+    font-family: "Monaco", courier, monospace;
     color: #fff;
 }
 

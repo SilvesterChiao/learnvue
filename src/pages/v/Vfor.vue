@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="flex: 1;">
         <h1>{{ msg }}</h1>
         <div>
             <h3>列表渲染</h3>

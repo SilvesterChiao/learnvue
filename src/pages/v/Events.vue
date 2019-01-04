@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="flex: 1;">
         <ul>
             <li>
                 searchText: {{ searchText }}

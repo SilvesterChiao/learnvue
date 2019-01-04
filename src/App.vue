@@ -53,6 +53,9 @@
                         <el-menu-item index="/animate">
                             特效
                         </el-menu-item>
+                        <el-menu-item index="/photos">
+                            图片
+                        </el-menu-item>
                     </el-submenu>
                     <el-submenu index="5">
                         <template slot="title">
@@ -96,20 +99,24 @@
                         <i class="el-icon-bell" style="font-size: 1.5em;"></i>
                     </el-badge>
                 </el-header>
-                <el-main class="content">
-                    <el-row class="breadcrumb">
-                        <el-col :span="24">
-                            <el-breadcrumb separator="/">
-                                <template v-for="(item, index) in breadlist">
-                                    <el-breadcrumb-item :to="{ name: item.name }" v-if="index < breadlist.length" :key="index">{{ item.meta.CName }}</el-breadcrumb-item>
-                                    <el-breadcrumb-item :key="index" v-else>{{ item.meta.CName }}</el-breadcrumb-item>
-                                </template>
-                            </el-breadcrumb>
-                        </el-col>
-                    </el-row>
-                    <!-- <img src="./assets/logo.png"> -->
-                    <router-view></router-view>
-                </el-main>
+                <el-container class="content-box">
+                    <el-header class="content-header" style="height: auto;">
+                        <el-row class="breadcrumb">
+                            <el-col :span="24">
+                                <el-breadcrumb separator="/">
+                                    <template v-for="(item, index) in breadlist">
+                                        <el-breadcrumb-item :to="{ name: item.name }" v-if="index < breadlist.length" :key="index">{{ item.meta.CName }}</el-breadcrumb-item>
+                                        <el-breadcrumb-item :key="index" v-else>{{ item.meta.CName }}</el-breadcrumb-item>
+                                    </template>
+                                </el-breadcrumb>
+                            </el-col>
+                        </el-row>
+                        <!-- <img src="./assets/logo.png"> -->
+                    </el-header>
+                    <el-main class="content">
+                        <router-view></router-view>
+                    </el-main>
+                </el-container>
                 <el-footer class="foot">
                     <p>Copyright &copy; 2018 SilvesterChiao.</p>
                 </el-footer>
@@ -177,7 +184,7 @@ body {
 
 #app {
     height: 100%;
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    font-family: "Avenir", Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
@@ -255,13 +262,23 @@ body {
     line-height: 1;
 }
 
-.content {
+.content-box {
     overflow: auto;
     margin-top: 16px;
-    padding: 20px 24px;
-    height: calc(100% - 60px);
+    padding: 20px 0;
     border-radius: 4px;
     background-color: #fff;
+}
+
+.content-header {
+    margin-bottom: 16px;
+    height: auto;
+}
+
+.content {
+    display: flex;
+    overflow: auto;
+    padding: 0 24px;
 }
 
 .content::-webkit-scrollbar {
@@ -269,7 +286,6 @@ body {
 }
 
 .breadcrumb {
-    margin-bottom: 16px;
 }
 
 .foot {
@@ -280,7 +296,7 @@ body {
 .foot p {
     line-height: 50px;
     text-align: center;
-    font-family: 'Arial';
+    font-family: "Arial";
     font-size: 18px;
     font-weight: 600;
     color: #999;

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="flex: 1;">
         <div>
             <h3>vuex</h3>
             <div class="vuex-demo">

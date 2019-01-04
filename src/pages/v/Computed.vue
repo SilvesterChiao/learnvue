@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="flex: 1;">
         计算属性
     </div>
 </template>

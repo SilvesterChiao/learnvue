@@ -1,5 +1,5 @@
 <template>
-    <div class="layout">
+    <div class="layout" style="flex: 1;">
         <el-row>
             <el-col :span="24">
                 <el-select v-model="layoutType" placeholder="布局类型">
@@ -68,7 +68,7 @@ export default {
                     value: 'three-g'
                 }
             ],
-            layoutType: ''
+            layoutType: 'two-a'
         }
     },
     components: {

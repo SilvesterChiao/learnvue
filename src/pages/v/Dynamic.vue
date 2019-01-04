@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="flex: 1;">
         <div id="dynamic-component-demo" class="demo">
             <button v-for="tab in tabs" v-bind:key="tab" v-bind:class="['tab-button', { active: currentTab === tab }]" v-on:click="currentTab = tab">{{ tab }}</button>
 

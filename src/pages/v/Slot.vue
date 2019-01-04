@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="flex: 1;">
         <alert-box>
             <h3 slot="header">Warnning!!</h3>
             Something bad happened.

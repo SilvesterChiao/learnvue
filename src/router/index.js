@@ -37,6 +37,7 @@ import Markdown from '@/pages/toolbox/Markdown'
 import ToolList from '@/pages/toolbox/ToolList'
 import Layout from '@/pages/toolbox/Layout'
 import Animate from '@/pages/toolbox/Animate'
+import Photos from '@/pages/toolbox/Photos'
 
 // 算法
 import Algorithm from '@/pages/algorithm/Index'
@@ -268,6 +269,14 @@ let router = new Router({
             component: Animate,
             meta: {
                 CName: '动画'
+            }
+        },
+        {
+            path: '/photos',
+            name: 'Photos',
+            component: Photos,
+            meta: {
+                CName: '图片'
             }
         },
         // 算法, 数据结构, 设计模式

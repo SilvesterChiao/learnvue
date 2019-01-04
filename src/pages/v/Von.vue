@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="flex: 1;">
         <h1>{{ msg }}</h1>
         <div id="example-1">
             <h3>事件监听</h3>

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="flex: 1;">
         <div>
             <h3>表单控件绑定</h3>
             <div>

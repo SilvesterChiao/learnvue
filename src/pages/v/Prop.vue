@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="flex: 1;">
         <!-- 传入prop时使用连字符 -->
         <!-- 使用v-bind动态绑定 -->
         <!-- 不使用v-bind传的都是字符串 true 123 -->

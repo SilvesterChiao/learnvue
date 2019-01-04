@@ -1,5 +1,5 @@
 <template>
-    <div class="hello">
+    <div class="hello" style="flex: 1;">
         <div>
             <p>axios</p>
             <ul>
