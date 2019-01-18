@@ -7,6 +7,8 @@
     </div>
 </template>
 <script>
+// props, slot, methods, event
+// data, computed, watch
 export default {
     props: {
         title: {

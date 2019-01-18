@@ -1,20 +1,20 @@
 /*
-* Prototype
-* 原型模式
-*/
+ * Prototype
+ * 原型模式
+ */
 
 var myCar = {
     name: 'Ford Escort',
-    drive: function(){
-        console.log('Weeee. I\'m driving!');
+    drive: function () {
+        console.log("Weeee. I'm driving!")
     },
-    panic: function(){
-        console.log('Wait. How do you stop this thing?');
+    panic: function () {
+        console.log('Wait. How do you stop this thing?')
     }
-};
+}
 
-var yourCar = Object.create(myCar);
-console.log(yourCar.name);
+var yourCar = Object.create(myCar)
+console.log(yourCar.name)
 
 // var vehicle = {
 //     getModel: function(){
@@ -34,51 +34,51 @@ console.log(yourCar.name);
 // });
 
 var vehiclePrototype = {
-    init: function(carModel){
-        this.model = carModel;
+    init: function (carModel) {
+        this.model = carModel
     },
-    getModel: function(){
-        console.log('The model of this vehicle is.. ' + this.model);
+    getModel: function () {
+        console.log('The model of this vehicle is.. ' + this.model)
     }
-};
-
-function vehicle(model){
-    function F(){  };
-    F.prototype = vehiclePrototype;
-
-    var f = new F();
-    f.init(model);
-    return f;
 }
 
-var car = vehicle('Ford Escort');
-car.getModel();
+function vehicle (model) {
+    function F () {}
+    F.prototype = vehiclePrototype
 
-var beget = (function(){
-    function F(){  }
-    return function(proto){
-        F.prototype = proto;
-        return new F();
-    };
-})();
+    var f = new F()
+    f.init(model)
+    return f
+}
+
+var car = vehicle('Ford Escort')
+car.getModel()
+
+var beget = (function () {
+    function F () {}
+    return function (proto) {
+        F.prototype = proto
+        return new F()
+    }
+})()
 
 // 原型，构造器混合模式
-function Person(name, age, job){
-    this.name = name;
-    this.age = age;
-    this.job = job;
-    this.friends = ["Shelby", "Court"];
+function Person (name, age, job) {
+    this.name = name
+    this.age = age
+    this.job = job
+    this.friends = ['Shelby', 'Court']
 }
 Person.prototype = {
-    constructor : Person,
-        sayName : function(){
-        alert(this.name);
+    constructor: Person,
+    sayName: function () {
+        alert(this.name)
     }
 }
 
-var person1 = new Person("Nicholas", 29, "Software Engineer");
-var person2 = new Person("Greg", 27, "Doctor");
-person1.friends.push("Van");
+var person1 = new Person('Nicholas', 29, 'Software Engineer')
+var person2 = new Person('Greg', 27, 'Doctor')
+person1.friends.push('Van')
 // alert(person1.friends); //"Shelby,Count,Van"
 // alert(person2.friends); //"Shelby,Count"
 // alert(person1.friends === person2.friends); //false
@@ -94,15 +94,14 @@ person1.friends.push("Van");
 
 // var dog1 = Dog();
 // Dog.eat();
+;(function () {
+    var _SIL = function () {}
 
-(function(){
-    var _SIL = function(){};
-
-    _SIL.prototype.alert = function(){
-        console.log('OK');
+    _SIL.prototype.alert = function () {
+        console.log('OK')
     }
 
-    window.Sil = new _SIL();
-})();
+    window.Sil = new _SIL()
+})()
 
-Sil.alert();
+Sil.alert()

@@ -1,21 +1,21 @@
 /*
-* Module
-* 模块模式
-*/
+ * Module
+ * 模块模式
+ */
 
-var testModule = (function(){
-    var counter = 0;
+var testModule = (function () {
+    var counter = 0
 
     return {
-        incrementCounter: function(){
-            return ++ counter;
+        incrementCounter: function () {
+            return ++counter
         },
-        resetCounter: function(){
-            console.log('counter value prior to reset: ' + counter);
-            counter = 0;
+        resetCounter: function () {
+            console.log('counter value prior to reset: ' + counter)
+            counter = 0
         }
     }
-})();
+})()
 
-testModule.incrementCounter();
-testModule.resetCounter();
+testModule.incrementCounter()
+testModule.resetCounter()

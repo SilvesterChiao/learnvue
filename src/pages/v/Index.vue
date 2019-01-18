@@ -19,6 +19,7 @@
                     <router-link to="/v/dynamic">动态组件</router-link>
                     <router-link to="/v/transitions">过渡效果</router-link>
                     <router-link to="/v/mixin">混入</router-link>
+                    <router-link to="/v/render">渲染函数</router-link>
                 </li>
             </ul>
         </div>

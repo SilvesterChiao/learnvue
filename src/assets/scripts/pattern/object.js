@@ -1,7 +1,7 @@
 /*
-* Object
-* 对象
-*/
+ * Object
+ * 对象
+ */
 
 // 创建， 设置， 查找， 删除， 检测， 枚举
 // 属性特性：可写， 可枚举， 可配置
@@ -11,21 +11,21 @@
 // 创建对象: 对象直接量， new， Object.create()
 var empty = {}
 var point = {
-  x: 0,
-  y: 0
+    x: 0,
+    y: 0
 }
 var point2 = {
-  x: point.x,
-  y: point.y + 1
+    x: point.x,
+    y: point.y + 1
 }
 var book = {
-  'main title': 'JavaScript',
-  'sub-title': 'The Definitive Guide',
-  for: 'all audiences',
-  author: {
-    firstname: 'David',
-    surname: 'Flanagan'
-  }
+    'main title': 'JavaScript',
+    'sub-title': 'The Definitive Guide',
+    for: 'all audiences',
+    author: {
+        firstname: 'David',
+        surname: 'Flanagan'
+    }
 }
 
 var o = new Object()
@@ -36,15 +36,15 @@ var r = new RegExp('js')
 var o1 = Object.create({ x: 1, y: 2 })
 
 function inherit (p) {
-  if (p == null) throw TypeError()
-  if (Object.create) {
-    return Object.create(p)
-  }
-  var t = typeof p
-  if (t !== 'object' && t !== 'function') throw TypeError()
-  function f () {}
-  f.prototype = p
-  return new f()
+    if (p == null) throw TypeError()
+    if (Object.create) {
+        return Object.create(p)
+    }
+    var t = typeof p
+    if (t !== 'object' && t !== 'function') throw TypeError()
+    function f () {}
+    f.prototype = p
+    return new f()
 }
 
 // var o = {};
@@ -58,20 +58,20 @@ function inherit (p) {
 // console.log(q.hasOwnProperty('z'));
 
 var p = {
-  x: 1.0,
-  y: 1.0,
-  get r () {
-    return Math.sqrt(this.x * this.x + this.y * this.y)
-  },
-  set r (newvalue) {
-    var oldvalue = Math.sqrt(this.x * this.x + this.y * this.y)
-    var ratio = newvalue / oldvalue
-    this.x *= ratio
-    this.y *= ratio
-  },
-  get theta () {
-    return Math.atan2(this.y, this.x)
-  }
+    x: 1.0,
+    y: 1.0,
+    get r () {
+        return Math.sqrt(this.x * this.x + this.y * this.y)
+    },
+    set r (newvalue) {
+        var oldvalue = Math.sqrt(this.x * this.x + this.y * this.y)
+        var ratio = newvalue / oldvalue
+        this.x *= ratio
+        this.y *= ratio
+    },
+    get theta () {
+        return Math.atan2(this.y, this.x)
+    }
 }
 
 var q = inherit(p)

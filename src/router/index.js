@@ -19,6 +19,7 @@ import Slot from '@/pages/v/Slot'
 import Dynamic from '@/pages/v/Dynamic'
 import Transitions from '@/pages/v/Transitions'
 import Mixin from '@/pages/v/Mixin'
+import Render from '@/pages/v/Render'
 
 // vue-router教程
 import R from '@/pages/r/Index'
@@ -182,6 +183,14 @@ let router = new Router({
                     component: Mixin,
                     meta: {
                         CName: '混入'
+                    }
+                },
+                {
+                    path: 'render',
+                    name: 'Render',
+                    component: Render,
+                    meta: {
+                        CName: '渲染函数'
                     }
                 }
             ]

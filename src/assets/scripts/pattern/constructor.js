@@ -1,7 +1,7 @@
 /*
-* Constructor
-* 构造器模式
-*/
+ * Constructor
+ * 构造器模式
+ */
 
 // 将键值赋给一个对象
 // newObject.someKey = 'Hello World!';
@@ -16,19 +16,19 @@
 //     enumerable: true,
 //     configurable: true
 // });
-var defineProp = function(obj, key, value){
+var defineProp = function (obj, key, value) {
     var config = {
         writable: true,
         enumerable: true,
         configurable: true
     }
-    config.value = value;
-    Object.defineProperty(obj, key, config);
-};
-var person = Object.create(null);
-defineProp(person, 'car', 'Delorean');
-defineProp(person, 'dateOfBirth', '1981');
-defineProp(person, 'hasBeard', false);
+    config.value = value
+    Object.defineProperty(obj, key, config)
+}
+var person = Object.create(null)
+defineProp(person, 'car', 'Delorean')
+defineProp(person, 'dateOfBirth', '1981')
+defineProp(person, 'hasBeard', false)
 
 // Object.defineProperties(newObject, {
 //     'someKey': {
@@ -41,10 +41,10 @@ defineProp(person, 'hasBeard', false);
 //     }
 // });
 
-var driver = Object.create(person);
-defineProp(driver, 'topSpeed', '100mph');
-console.log(driver.dateOfBirth);
-console.log(driver.topSpeed);
+var driver = Object.create(person)
+defineProp(driver, 'topSpeed', '100mph')
+console.log(driver.dateOfBirth)
+console.log(driver.topSpeed)
 
 // 基本构造器
 // function Car(model, year, miles){
@@ -58,12 +58,12 @@ console.log(driver.topSpeed);
 // }
 
 // 带原型的构造器
-function Car(model, year, miles){
-    this.model = model;
-    this.year = year;
-    this.miles = miles;
+function Car (model, year, miles) {
+    this.model = model
+    this.year = year
+    this.miles = miles
 }
 
-Car.prototype.toString = function(){
-    return this.model + ' has done ' + this.miles + ' miles';
+Car.prototype.toString = function () {
+    return this.model + ' has done ' + this.miles + ' miles'
 }
