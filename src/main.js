@@ -10,12 +10,14 @@ import App from './App'
 import router from './router'
 import store from './store/index'
 import axios from 'axios'
+import moment from 'moment'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI, { size: 'small' })
 Vue.use(animate)
 
 Vue.prototype.axios = axios
+Vue.prototype.$moment = moment
 
 // 注册一个全局自定义指令 'v-focus'
 Vue.directive('focus', {

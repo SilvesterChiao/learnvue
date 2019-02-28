@@ -30,7 +30,8 @@ module.exports = {
             styles: path.resolve(__dirname, '../src/assets/styles'),
             components: path.resolve(__dirname, '../src/components'),
             mixins: path.resolve(__dirname, '../src/mixins'),
-            utils: path.resolve(__dirname, '../src/utils')
+            utils: path.resolve(__dirname, '../src/utils'),
+            data: path.resolve(__dirname, '../src/assets/scripts/data')
         }
     },
     module: {
