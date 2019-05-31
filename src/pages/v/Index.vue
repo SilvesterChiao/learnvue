@@ -1,7 +1,5 @@
 <template>
     <div class="introduce" style="flex: 1;">
-        <el-alert title="非常危险" type="warning" description="千万不要念出这行字, 否则会有恐怖的事情发生" show-icon @close="alertClose">
-        </el-alert>
         <div>
             <ul>
                 <li>
@@ -156,9 +154,6 @@ export default {
         },
         onComaMyEvent (parmfromA) {
             console.log('onComaMyEvent ' + parmfromA)
-        },
-        alertClose () {
-            console.log('alert close')
         },
         addAppleCount (number = 1) {
             addApple(true).then(() => {
